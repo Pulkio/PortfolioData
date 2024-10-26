@@ -23,7 +23,7 @@
     left: 0;
     width: 100%; /* Prendre toute la largeur de l'écran */
     height: 100%; /* Prendre toute la hauteur de l'écran */
-    background-color: rgba(0, 0, 0, 0.9); /* Fond noir transparent */
+    background-color: rgba(0, 0, 0, 0.95); /* Fond noir transparent */
     color: #fff; /* Couleur du texte */
     display: flex; /* Utiliser flexbox pour centrer le contenu */
     align-items: center; /* Centrer verticalement */
