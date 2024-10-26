@@ -1,64 +1,91 @@
-/* Styles pour la section d'information */
+/* Section d'information */
 .info-section {
-    background-color: #121212; /* Même fond que la boîte de chat */
-    display: flex; /* Utilisation de flexbox pour aligner l'image et le texte */
-    flex-direction: row-reverse; /* Place l'image à droite du texte */
-    align-items: center; /* Centre verticalement les éléments */
-    justify-content: center; /* Centre horizontalement le contenu */
-    padding: 40px 20px; /* Espacement */
-    color: #ffffff; /* Couleur du texte */
-    text-align: center; /* Centre le texte à l'intérieur de info-text */
+    background-color: #121212;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    color: #ffffff;
+    text-align: center;
 }
 
-/* Styles pour la photo de profil */
+/* Photo de profil */
 .profile-photo {
-    width: 200px; /* Largeur de la photo */
-    height: 320px; /* Hauteur de la photo pour conserver le ratio d'aspect */
-    border-radius: 30%; /* Arrondir la photo */
-    margin-left: 40px; /* Augmente l'espacement à gauche de l'image */
-    object-fit: cover; /* Garde le ratio d'aspect */
+    width: 200px;
+    height: 320px;
+    border-radius: 30%;
+    margin-left: 40px;
+    object-fit: cover;
+    transition: transform 0.3s ease; /* Transition douce pour l'animation au hover */
 }
 
-/* Styles pour le texte d'information */
-.info-text {
-    margin-top: 0; /* Supprime l'espacement au-dessus du texte */
+/* Texte d'information */
+.info-text h1 {
+    font-size: 2.5em; /* Taille du texte plus grande pour les écrans larges */
 }
 
-/* Styles pour les titres */
-h1, h2, h3 {
-    margin: 10px 0; /* Espacement autour des titres */
+.info-text h2 {
+    font-size: 1.8em;
 }
 
-h1 {
-    font-size: 3rem; /* Augmente la taille de "Bienvenue sur mon portfolio" */
-}
-
-/* Animations */
-@keyframes fadeIn {
-    0% { opacity: 0; transform: translateY(20px); }
-    100% { opacity: 1; transform: translateY(0); }
-}
-
-/* Animation pour le titre principal */
-.animate-title {
-    animation: fadeIn 1s ease-out forwards; /* Animation plus lente pour le titre principal */
-}
-
-/* Animation pour les sous-titres */
-.animate-fadein {
-    animation: fadeIn 1.5s ease-out forwards;
+.info-text h3 {
+    font-size: 1.2em;
 }
 
 /* Animation au hover pour les titres */
 h1:hover, h2:hover, h3:hover {
-    color: #FFD700; /* Change la couleur au hover */
-    transform: scale(1.05); /* Légère augmentation de l'échelle */
-    transition: color 0.3s ease, transform 0.3s ease; /* Transition douce */
+    color: #FFD700;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
-/* Animation au hover pour la photo de profil */
+/* Animation au hover pour la photo */
 .profile-photo:hover {
-    transform: scale(1.1); /* Zoom léger */
-    transition: transform 0.3s ease; /* Transition douce */
+    transform: scale(1.1);
 }
 
+/* Responsive : Pour les écrans de moins de 768px */
+@media (max-width: 768px) {
+    .info-section {
+        flex-direction: column; /* Met la photo sous le texte */
+    }
+
+    .profile-photo {
+        margin-left: 0; /* Supprime l'espacement gauche */
+        margin-bottom: 20px; /* Ajoute de l'espacement en dessous */
+        width: 150px; /* Réduit la largeur de la photo */
+        height: 240px; /* Réduit la hauteur de la photo pour garder le ratio */
+    }
+
+    .info-text h1 {
+        font-size: 2em; /* Réduit la taille du texte pour les petits écrans */
+    }
+
+    .info-text h2 {
+        font-size: 1.5em;
+    }
+
+    .info-text h3 {
+        font-size: 1em;
+    }
+}
+
+/* Responsive : Pour les écrans de moins de 480px */
+@media (max-width: 480px) {
+    .info-text h1 {
+        font-size: 1.8em; /* Taille plus petite pour les très petits écrans */
+    }
+
+    .info-text h2 {
+        font-size: 1.3em;
+    }
+
+    .info-text h3 {
+        font-size: 0.9em;
+    }
+
+    .profile-photo {
+        width: 120px; /* Taille plus petite de la photo */
+        height: 192px; /* Ajuste la hauteur pour le ratio */
+    }
+}

@@ -9,6 +9,37 @@ main {
 }
 
 
+/* Responsive pour main */
+@media (max-width: 1200px) {
+    main {
+        width: 60vw; /* Augmente la largeur à 60% pour les écrans moyens */
+    }
+}
+
+@media (max-width: 992px) {
+    main {
+        width: 70vw; /* Augmente la largeur à 70% pour les tablettes */
+    }
+}
+
+@media (max-width: 768px) {
+    main {
+        width: 80vw; /* Passe à 80% pour les écrans plus petits */
+    }
+}
+
+@media (max-width: 576px) {
+    main {
+        width: 90vw; /* Presque pleine largeur sur les petits écrans */
+    }
+}
+
+@media (max-width: 400px) {
+    main {
+        width: 95vw; /* Ajuste à 95% pour les très petits écrans */
+    }
+}
+
 /* CHATBOX */
 .chat-box {
     display: none; /* Masqué par défaut */
@@ -22,6 +53,12 @@ main {
     border-radius: 8px;
     box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
     padding: 10px; /* Ajoutez du padding ici pour espacer le contenu */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chat-box:hover {
+    transform: translateY(-5px); /* Légère élévation de la boîte */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre douce */
 }
 
 /* Log de chat */
@@ -55,6 +92,13 @@ main {
     max-width: 80%; /* Limite la largeur maximale */
     align-self: flex-end; /* Aligne les messages de l'utilisateur à droite */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Ajoute une légère ombre */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover pour les messages utilisateur */
+.user-message:hover {
+    transform: scale(1.02); /* Légère augmentation de taille */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Accentuation de l’ombre */
 }
 
 /* Styles pour les messages du bot */
@@ -68,6 +112,13 @@ main {
     max-width: 80%; /* Limite la largeur maximale */
     align-self: flex-start; /* Aligne les messages du bot à gauche */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Ajoute une légère ombre */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover pour les messages du bot */
+.bot-message:hover {
+    transform: scale(1.02); /* Légère augmentation de taille */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Accentuation de l’ombre */
 }
 
 /* Champs de texte et bouton */
@@ -83,6 +134,13 @@ input[type="text"] {
     display: block; /* S'assure que l'input prend toute la largeur */
     margin-left: auto; /* Centre l'input */
     margin-right: auto; /* Centre l'input */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover pour la barre de texte */
+input[type="text"]:hover {
+    background-color: #444; /* Légère variation de couleur au survol */
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.2); /* Ajoute une légère ombre brillante */
 }
 
 button {
@@ -93,7 +151,7 @@ button {
     color: #ffffff; /* Texte en blanc */
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.2s;
     display: block; /* S'assure que le bouton prend toute la largeur */
     margin: 0 auto; /* Centre le bouton */
 }
@@ -109,4 +167,10 @@ button:hover {
     font-size: 20px; /* Augmente la taille de la police */
     font-weight: bold; /* Rend le texte en gras, si souhaité */
     color: #ffffff; /* Couleur blanche pour le texte */
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.chat-prompt:hover {
+    color: #FFD700; /* Change la couleur en or au survol */
 }
