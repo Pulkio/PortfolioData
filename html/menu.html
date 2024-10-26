@@ -1,8 +1,18 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
 <div class="menu-content">
     <span class="close" onclick="toggleMenu()">&times;</span> <!-- Bouton pour fermer le menu -->
     <h2>Menu</h2>
     <ul id="menu-links">
-        <li><a href="/index.html" class="menu-link">Accueil</a></li>
+        <li><a id="home-link" href="index.html" class="menu-link">Accueil</a></li>
         <li><a href="html/formations.html" class="menu-link">Formations</a></li>
         <li><a href="html/competences.html" class="menu-link">Compétences</a></li>
         <li><a href="html/projets.html" class="menu-link">Projets</a></li>
@@ -11,22 +21,12 @@
 </div>
 
 <script>
-    document.addEventListener("DOMContentLoaded", () => {
-        // Vérifie si vous êtes sur GitHub Pages
-        const isGithub = window.location.hostname.includes('github.io');
+    // Vérifie si vous êtes sur GitHub Pages
+    const isGithub = window.location.hostname.includes('github.io');
 
-        // Ajuste les liens si vous êtes sur GitHub
-        document.querySelectorAll('.menu-link').forEach(link => {
-            const href = link.getAttribute('href');
-            if (isGithub) {
-                // Pour index.html, redirige vers l'URL GitHub
-                if (href === 'index.html') {
-                    link.setAttribute('href', `https://pulkio.github.io/PortfolioData/index.html`);
-                } else {
-                    // Pour les autres, ajoute le chemin approprié
-                    link.setAttribute('href', `https://pulkio.github.io/PortfolioData/${href}`);
-                }
-            }
-        });
-    });
+    // Modifie le lien d'accueil
+    const homeLink = document.getElementById('home-link');
+    if (isGithub) {
+        homeLink.href = 'https://pulkio.github.io/PortfolioData/index.html';
+    }
 </script>
