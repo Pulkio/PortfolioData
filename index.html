@@ -3,15 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
     <title>Chatbot Portfolio</title>
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="chatbox">
+    <header>
+        <h1>Bienvenue sur mon Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <h2>Posez-moi une question !</h2>
         <div id="chat-log"></div>
-        <input type="text" id="user-input" placeholder="Posez une question..." autofocus>
+        <input type="text" id="user-input" placeholder="Votre question...">
         <button onclick="sendMessage()">Envoyer</button>
-    </div>
-    <script src="app.js"></script>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Mon Portfolio</p>
+    </footer>
+
+    <script src="scripts/utils.js"></script>
+    <script src="scripts/chat.js"></script>
 </body>
 </html>
