@@ -10,8 +10,23 @@ function loadMenu() {
         })
         .then(data => {
             menuContainer.innerHTML = data; // Charger le contenu ici
+            adjustMenuLinks(); // Appeler la fonction pour ajuster les liens après le chargement du menu
         })
         .catch(error => console.error('Erreur lors du chargement du menu:', error));
+}
+
+// Fonction pour ajuster les liens dynamiquement en fonction de l'environnement
+function adjustMenuLinks() {
+    // Détecte l'environnement GitHub Pages
+    const basePath = window.location.hostname.includes('github.io') ? '/PortfolioData/' : '/';
+
+    // Applique le chemin correct aux liens dynamiquement
+    document.querySelectorAll('a').forEach(link => {
+        const href = link.getAttribute('href');
+        if (href.startsWith('/')) {
+            link.setAttribute('href', `${basePath}${href.slice(1)}`);
+        }
+    });
 }
 
 // Fonction pour afficher/masquer le menu avec animation
