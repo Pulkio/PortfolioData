@@ -83,5 +83,12 @@ document.getElementById("user-input").addEventListener("keypress", function(even
     }
 });
 
+// Fonction pour effacer le chat
+function clearChat() {
+    const chatLog = document.getElementById("chat-log");
+    chatLog.innerHTML = ""; // Supprime tout le contenu du log de chat
+}
+
+
 // Charger les données au démarrage
 loadData();

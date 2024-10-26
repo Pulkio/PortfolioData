@@ -1,7 +1,7 @@
 /* MAIN */
 main {
     width: 50vw; /* Largeur fixée à 50% de la largeur de la fenêtre */
-    margin: 0 auto; /* Centre le main */
+    margin: 20px auto; /* Centre le main */
     padding: 20px; /* Ajoute un padding pour espacer le contenu */
     
     border-top: 1px solid #ffcc00; /* Bordure supérieure en jaune */
@@ -173,4 +173,36 @@ button:hover {
 
 .chat-prompt:hover {
     color: #FFD700; /* Change la couleur en or au survol */
+}
+
+.clear-button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #ff3333; /* Couleur de fond rouge pour distinguer le bouton */
+    border: none;
+    color: #fff;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.clear-button:hover {
+    background-color: #cc0000; /* Couleur au survol */
+}
+
+
+.button-container {
+    display: flex; /* Aligne les éléments enfants en ligne */
+    gap: 10px; /* Espacement entre les boutons */
+    justify-content: center; /* Centre les boutons si nécessaire */
+    margin-top: 10px;
+}
+
+button, .clear-button {
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
 }

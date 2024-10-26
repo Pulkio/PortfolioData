@@ -39,8 +39,13 @@
         <div class="chat-prompt">Posez-moi une question !</div> <!-- Texte centré -->
         <div id="chat-log" class="chat-log"></div> <!-- Log de chat pour afficher les messages -->
         <input type="text" id="user-input" placeholder="Votre question...">
-        <button onclick="sendMessage()">Envoyer</button>
+        <div class="button-container">
+            <button onclick="sendMessage()">Envoyer</button>
+            <button onclick="clearChat()" class="clear-button">Effacer le chat</button> <!-- Bouton pour effacer le chat -->
+        </div>
     </main>
+    
+    
 
     <div class="chat-box" id="chat-box">
         <div class="chat-header">
