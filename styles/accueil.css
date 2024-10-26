@@ -1,3 +1,20 @@
+/* Animation d'apparition du texte */
+@keyframes fadeInSlideUp {
+    0% {
+        opacity: 0; /* Complètement transparent */
+        transform: translateY(30px); /* Décalage vers le bas */
+    }
+    100% {
+        opacity: 1; /* Entièrement opaque */
+        transform: translateY(0); /* Position normale */
+    }
+}
+
+/* Appliquer l'animation sur le texte d'information */
+.info-text {
+    animation: fadeInSlideUp 1s ease-out forwards; /* Durée et effet de l'animation */
+}
+
 /* Section d'information */
 .info-section {
     background-color: #121212;
