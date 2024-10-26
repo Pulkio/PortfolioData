@@ -1,0 +1,25 @@
+/* NAVIGATION */
+nav {
+    margin-top: 20px; /* Ajoute de la marge au-dessus de la navigation */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 18px; /* Augmente la taille du texte des boutons */
+}
+
+nav a:hover {
+    color: #aaaaaa; /* Couleur gris clair au survol */
+}

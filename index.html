@@ -3,27 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titre de votre page</title>
     <link rel="stylesheet" href="styles/style.css">
-    <title>Chatbot Portfolio</title>
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/navigation.css">
+    <link rel="stylesheet" href="styles/chat.css">
+    <link rel="stylesheet" href="styles/footer.css">
 </head>
 <body>
     <header>
-        <h1>Bienvenue sur mon Portfolio</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Accueil</a></li>
-                <li><a href="about.html">À propos</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="about.html">Formations</a></li>
+                <li><a href="projects.html">Compétences</a></li>
+                <li><a href="contact.html">Projets</a></li>
+                <li><a href="blog.html">Loisirs</a></li>
             </ul>
         </nav>
     </header>
     
     <main>
-        <h2>Posez-moi une question !</h2>
-        <div id="chat-log"></div>
+        <div class="chat-prompt">Posez-moi une question !</div> <!-- Texte centré -->
+        <div id="chat-log" class="chat-log"></div> <!-- Log de chat pour afficher les messages -->
         <input type="text" id="user-input" placeholder="Votre question...">
         <button onclick="sendMessage()">Envoyer</button>
     </main>
+
+    <div class="chat-box" id="chat-box">
+        <div class="chat-header">
+            <h3>Chatbot</h3>
+            <button onclick="toggleChat()">✖</button>
+        </div>
+        <div class="chat-log" id="chat-log-inner"></div> <!-- Log de chat pour afficher les messages -->
+        <input type="text" id="user-input-chat" placeholder="Votre question...">
+        <button onclick="sendMessage()">Envoyer</button>
+    </div>
 
     <footer>
         <p>&copy; 2024 Mon Portfolio</p>

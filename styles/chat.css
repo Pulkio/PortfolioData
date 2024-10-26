@@ -1,0 +1,110 @@
+/* MAIN */
+main {
+    width: 50vw; /* Largeur fixée à 50% de la largeur de la fenêtre */
+    margin: 0 auto; /* Centre le main */
+    padding: 20px; /* Ajoute un padding pour espacer le contenu */
+}
+
+
+
+/* CHATBOX */
+.chat-box {
+    display: none; /* Masqué par défaut */
+    position: fixed;
+    bottom: 70px;
+    right: 20px;
+    width: 50%; /* Modifié pour prendre 50% de la largeur de l'écran */
+    max-width: 350px; /* Largeur maximale pour la boîte de chat */
+    background-color: #222; /* Couleur de fond de la boîte de chat */
+    border: 1px solid #444; /* Bordure gris foncé */
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+    padding: 10px; /* Ajoutez du padding ici pour espacer le contenu */
+}
+
+/* Log de chat */
+#chat-log {
+    width: 100%; /* Prendre toute la largeur de la boîte de chat */
+    max-height: 250px; /* Limite la hauteur du log de chat */
+    margin: 0 auto; /* Centrer le chat log */
+    overflow-y: auto; /* Défilement vertical si nécessaire */
+    display: flex;
+    flex-direction: column; /* Alignement vertical des messages */
+}
+
+/* En-tête du chat */
+.chat-header {
+    background: #1f1f1f; /* Couleur de fond de l'en-tête */
+    padding: 10px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    color: #ffffff;
+    text-align: center; /* Centre le texte dans l'en-tête */
+}
+
+/* Styles pour les messages de l'utilisateur */
+.user-message {
+    background-color: #333; /* Couleur de fond légèrement plus claire */
+    color: #ffffff; /* Texte en blanc */
+    margin-bottom: 10px; /* Espacement entre les messages */
+    border-radius: 10px; /* Bords arrondis */
+    padding: 10px 15px; /* Ajout de padding pour une meilleure présentation */
+    border: 1px solid #444; /* Bordure gris foncé */
+    max-width: 80%; /* Limite la largeur maximale */
+    align-self: flex-end; /* Aligne les messages de l'utilisateur à droite */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Ajoute une légère ombre */
+}
+
+/* Styles pour les messages du bot */
+.bot-message {
+    background-color: #222; /* Couleur de fond plus sombre */
+    color: #ffffff; /* Texte en blanc */
+    margin-bottom: 10px; /* Espacement entre les messages */
+    border-radius: 10px; /* Bords arrondis */
+    padding: 10px 15px; /* Ajout de padding pour une meilleure présentation */
+    border: 1px solid #444; /* Bordure gris foncé */
+    max-width: 80%; /* Limite la largeur maximale */
+    align-self: flex-start; /* Aligne les messages du bot à gauche */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Ajoute une légère ombre */
+}
+
+/* Champs de texte et bouton */
+input[type="text"] {
+    width: calc(100% - 24px); /* Prendre toute la largeur moins le padding */
+    padding: 12px;
+    border-radius: 25px;
+    border: 1px solid #444; /* Bordure gris foncé */
+    background-color: #333333; /* Fond gris foncé */
+    color: #ffffff; /* Texte en blanc */
+    font-size: 16px;
+    margin: 10px 0; /* Marge au-dessus et en dessous du champ de saisie */
+    display: block; /* S'assure que l'input prend toute la largeur */
+    margin-left: auto; /* Centre l'input */
+    margin-right: auto; /* Centre l'input */
+}
+
+button {
+    padding: 12px 20px;
+    border: 1px solid #444; /* Bordure gris foncé */
+    border-radius: 25px;
+    background-color: #1f1f1f; /* Fond du bouton */
+    color: #ffffff; /* Texte en blanc */
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: block; /* S'assure que le bouton prend toute la largeur */
+    margin: 0 auto; /* Centre le bouton */
+}
+
+button:hover {
+    background-color: #333333; /* Fond gris clair au survol */
+}
+
+/* Le message au-dessus (Posez-moi une question) */
+.chat-prompt {
+    text-align: center; /* Centre le texte */
+    margin: 20px 0; /* Ajoute plus de marge en haut et en bas */
+    font-size: 20px; /* Augmente la taille de la police */
+    font-weight: bold; /* Rend le texte en gras, si souhaité */
+    color: #ffffff; /* Couleur blanche pour le texte */
+}

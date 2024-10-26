@@ -1,0 +1,10 @@
+/* FOOTER */
+footer {
+    background: #1f1f1f;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #444; /* Bordure gris foncé */
+    margin-top: auto; /* Assurez-vous que cela est présent */
+    width: 100%;
+}

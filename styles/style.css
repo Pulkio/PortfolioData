@@ -1,58 +1,15 @@
-body {
-    font-family: Arial, sans-serif;
+/* Reset de base */
+* {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    box-sizing: border-box;
 }
 
-header {
-    background: #35424a;
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212; /* Noir adouci */
     color: #ffffff;
-    padding: 20px 0;
-    text-align: center;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-nav a {
-    color: #ffffff;
-    text-decoration: none;
-}
-
-main {
-    padding: 20px;
-}
-
-#chat-log {
-    border: 1px solid #ddd;
-    padding: 10px;
-    height: 300px;
-    overflow-y: auto;
-    background-color: #fff;
-}
-
-.user-message {
-    text-align: right;
-    color: blue;
-}
-
-.bot-message {
-    text-align: left;
-    color: green;
-}
-
-footer {
-    text-align: center;
-    padding: 20px 0;
-    background: #35424a;
-    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Cela garantit que le body prend toute la hauteur de la fenêtre */
 }
