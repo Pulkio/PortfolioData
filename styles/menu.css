@@ -3,23 +3,17 @@
     position: relative;
 }
 
-#menu-button {
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 40px; /* Largeur du bouton du menu */
-    height: 30px; /* Hauteur du bouton du menu */
-    margin: 10px; /* Espacement autour du bouton */
-    z-index: 1000; /* Assurez-vous que le bouton est au-dessus */
+.menu-icon {
+    position: absolute;
+    top: 20px; /* Espacement du haut */
+    right: 20px; /* Espacement à droite */
+    font-size: 30px; /* Taille de l'icône */
+    color: #fff; /* Couleur de l'icône */
+    cursor: pointer; /* Curseur en main */
 }
 
-.bar {
-    height: 4px; /* Hauteur de chaque barre */
-    width: 100%; /* Largeur des barres */
-    background-color: #fff; /* Couleur des barres */
-    margin: 3px 0; /* Espacement entre les barres */
-    transition: all 0.3s; /* Animation */
+.menu-icon:hover {
+    color: #555; /* Changer de couleur au survol */
 }
 
 /* Styles pour le menu */
@@ -38,12 +32,14 @@
     transform: translateY(-100%); /* Positionner le menu hors de l'écran */
     transition: opacity 0.5s, transform 0.5s; /* Animation d'ouverture */
     z-index: 999; /* Assurez-vous que le menu est au-dessus */
+    visibility: hidden; /* Cacher le menu au départ */
 }
 
 /* Classes d'état pour afficher le menu */
 #menu.visible {
     opacity: 1; /* Rendre le menu visible */
     transform: translateY(0); /* Faire glisser le menu dans la vue */
+    visibility: visible; /* Rendre visible */
 }
 
 /* Styles pour le contenu du menu */
@@ -73,4 +69,8 @@
     top: 20px;
     right: 30px;
     cursor: pointer; /* Changer le curseur sur hover */
+}
+
+.hidden {
+    display: none; /* Cacher le menu par défaut */
 }

@@ -1,42 +1,11 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu</title>
-    <link rel="stylesheet" href="../styles/menu.css"> <!-- Lien vers le CSS du menu -->
-</head>
-<body>
-    <div id="menu-container">
-        <div id="menu-button" onclick="toggleMenu()">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-        </div>
-        <div id="menu" class="visible"> <!-- Changer 'hidden' en 'visible' pour afficher le menu -->
-            <div class="menu-content">
-                <span class="close" onclick="goBack()">&times;</span> <!-- Appel à goBack pour fermer le menu et revenir -->
-                <h2>Menu</h2>
-                <ul>
-                    <li><a href="../index.html">Accueil</a></li>
-                    <li><a href="about.html">Formations</a></li>
-                    <li><a href="projects.html">Compétences</a></li>
-                    <li><a href="contact.html">Projets</a></li>
-                    <li><a href="blog.html">Loisirs</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById("menu");
-            menu.classList.toggle("visible");
-        }
-
-        function goBack() {
-            window.history.back(); // Retourne à la page précédente
-        }
-    </script>
-</body>
-</html>
+<div class="menu-content">
+    <span class="close" onclick="toggleMenu()">&times;</span> <!-- Bouton pour fermer le menu -->
+    <h2>Menu</h2>
+    <ul>
+        <li><a href="../index.html">Accueil</a></li>
+        <li><a href="about.html">Formations</a></li>
+        <li><a href="projects.html">Compétences</a></li>
+        <li><a href="contact.html">Projets</a></li>
+        <li><a href="blog.html">Loisirs</a></li>
+    </ul>
+</div>
