@@ -1,11 +1,30 @@
 <div class="menu-content">
     <span class="close" onclick="toggleMenu()">&times;</span> <!-- Bouton pour fermer le menu -->
     <h2>Menu</h2>
-    <ul>
-        <li><a href="https://pulkio.github.io/PortfolioData/index.html">Accueil</a></li>
-        <li><a href="../formation.html">Formations</a></li>
-        <li><a href="projects.html">Compétences</a></li>
-        <li><a href="contact.html">Projets</a></li>
-        <li><a href="blog.html">Loisirs</a></li>
+    <ul id="menu-links">
+        <li><a href="../index.html" class="menu-link">Accueil</a></li>
+        <li><a href="html/formations.html" class="menu-link">Formations</a></li>
+        <li><a href="html/competences.html" class="menu-link">Compétences</a></li>
+        <li><a href="html/projets.html" class="menu-link">Projets</a></li>
+        <li><a href="html/loisirs.html" class="menu-link">Loisirs</a></li>
     </ul>
 </div>
+
+<script>
+    // Vérifie si vous êtes sur GitHub Pages
+    const isGithub = window.location.hostname.includes('github.io');
+
+    // Ajuste les liens si vous êtes sur GitHub
+    document.querySelectorAll('.menu-link').forEach(link => {
+        const href = link.getAttribute('href');
+
+        if (isGithub) {
+            // Pour index.html, ajoute ../ et pour les autres ne rien changer
+            if (href === '../index.html') {
+                link.setAttribute('href', `https://pulkio.github.io/PortfolioData/index.html`);
+            } else {
+                link.setAttribute('href', `https://pulkio.github.io/PortfolioData/${href}`);
+            }
+        }
+    });
+</script>
