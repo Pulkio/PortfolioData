@@ -75,5 +75,13 @@ async function sendMessage() {
     chatLog.scrollTop = chatLog.scrollHeight;
 }
 
+// Écouter les événements de touche sur le champ de saisie
+document.getElementById("user-input").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault(); // Empêche le comportement par défaut (naviguer ou envoyer le formulaire)
+        sendMessage(); // Appelle la fonction pour envoyer le message
+    }
+});
+
 // Charger les données au démarrage
 loadData();

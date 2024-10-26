@@ -9,19 +9,25 @@
     <link rel="stylesheet" href="styles/navigation.css">
     <link rel="stylesheet" href="styles/chat.css">
     <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Importer Font Awesome pour les icônes -->
+    <style>
+        /* Style pour l'icône de menu burger */
+        .menu-icon {
+            position: absolute;
+            top: 20px; /* Espacement du haut */
+            right: 20px; /* Espacement à droite */
+            font-size: 30px; /* Taille de l'icône */
+            color: #fff; /* Couleur de l'icône */
+            cursor: pointer; /* Curseur en main */
+        }
+
+        .menu-icon:hover {
+            color: #555; /* Changer de couleur au survol */
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="about.html">Formations</a></li>
-                <li><a href="projects.html">Compétences</a></li>
-                <li><a href="contact.html">Projets</a></li>
-                <li><a href="blog.html">Loisirs</a></li>
-            </ul>
-        </nav>
-    </header>
+    <i class="fas fa-bars menu-icon" onclick="window.location.href='html/menu.html'"></i> <!-- Icône de menu burger -->
     
     <main>
         <div class="chat-prompt">Posez-moi une question !</div> <!-- Texte centré -->
