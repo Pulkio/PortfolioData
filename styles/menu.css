@@ -63,13 +63,15 @@
     margin: 20px 0; /* Espacement entre les éléments */
 }
 
+/* Augmenter la taille du texte du menu */
 .menu-content a {
     color: #fff; /* Couleur des liens */
     text-decoration: none; /* Supprimer le soulignement */
-    font-size: 24px; /* Taille de la police */
+    font-size: 28px; /* Taille de la police augmentée */
     position: relative; /* Nécessaire pour l'effet de soulignement */
     transition: color 0.3s ease, background-color 0.3s ease; /* Transition pour les changements de couleur */
 }
+
 
 /* Effet au hover pour les liens */
 .menu-content a:hover {
@@ -79,11 +81,18 @@
     border-radius: 5px; /* Arrondi les coins */
 }
 
-/* Style pour le bouton de fermeture */
+/* Effet de survol jaune pour la croix de fermeture */
 .close {
-    font-size: 40px; /* Taille du bouton de fermeture */
+    font-size: 80px; /* Taille du bouton de fermeture */
     position: absolute; /* Positionner le bouton en haut à droite */
     top: 20px;
     right: 30px;
     cursor: pointer; /* Changer le curseur sur hover */
+    color: #fff; /* Couleur par défaut de la croix */
+    transition: color 0.3s ease; /* Transition pour le hover */
+}
+
+/* Couleur jaune au survol pour la croix de fermeture */
+.close:hover {
+    color: #FFD700; /* Couleur jaune au survol */
 }
