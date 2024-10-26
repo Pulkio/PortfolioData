@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Montserrat', sans-serif; /* Utiliser Montserrat comme police */
     background-color: #121212; /* Noir adouci */
     color: #ffffff;
     display: flex;

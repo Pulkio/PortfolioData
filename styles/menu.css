@@ -67,6 +67,16 @@
     color: #fff; /* Couleur des liens */
     text-decoration: none; /* Supprimer le soulignement */
     font-size: 24px; /* Taille de la police */
+    position: relative; /* Nécessaire pour l'effet de soulignement */
+    transition: color 0.3s ease, background-color 0.3s ease; /* Transition pour les changements de couleur */
+}
+
+/* Effet au hover pour les liens */
+.menu-content a:hover {
+    color: #ffcc00; /* Couleur du texte au survol */
+    background-color: rgba(255, 255, 255, 0.1); /* Couleur de fond au survol */
+    padding: 5px; /* Ajoute un espacement */
+    border-radius: 5px; /* Arrondi les coins */
 }
 
 /* Style pour le bouton de fermeture */

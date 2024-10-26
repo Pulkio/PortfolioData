@@ -3,8 +3,10 @@ main {
     width: 50vw; /* Largeur fixée à 50% de la largeur de la fenêtre */
     margin: 0 auto; /* Centre le main */
     padding: 20px; /* Ajoute un padding pour espacer le contenu */
+    
+    border-top: 1px solid #ffcc00; /* Bordure supérieure en jaune */
+    border-bottom: 1px solid #ffcc00; /* Bordure inférieure en jaune */
 }
-
 
 
 /* CHATBOX */
