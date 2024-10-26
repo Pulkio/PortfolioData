@@ -11,21 +11,28 @@
 </div>
 
 <script>
-    // Vérifie si vous êtes sur GitHub Pages
-    const isGithub = window.location.hostname.includes('github.io');
+    document.addEventListener("DOMContentLoaded", () => {
+        // Vérifie si vous êtes sur GitHub Pages
+        const isGithub = window.location.hostname.includes('github.io');
 
-    // Ajuste les liens si vous êtes sur GitHub
-    document.querySelectorAll('.menu-link').forEach(link => {
-        const href = link.getAttribute('href');
+        // Ajuste les liens si vous êtes sur GitHub
+        document.querySelectorAll('.menu-link').forEach(link => {
+            const href = link.getAttribute('href');
 
-        if (isGithub) {
-            // Pour index.html, redirige vers l'URL GitHub
-            if (href === 'index.html') {
-                link.setAttribute('href', `https://pulkio.github.io/PortfolioData/index.html`);
-            } else {
-                // Pour les autres, ajoute le chemin approprié
-                link.setAttribute('href', `https://pulkio.github.io/PortfolioData/${href}`);
+            // Log pour débogage
+            console.log(`Processing link: ${href}`);
+
+            if (isGithub) {
+                // Pour index.html, redirige vers l'URL GitHub
+                if (href === 'index.html') {
+                    console.log("Setting href for Accueil to GitHub URL");
+                    link.setAttribute('href', `https://pulkio.github.io/PortfolioData/index.html`);
+                } else {
+                    // Pour les autres, ajoute le chemin approprié
+                    console.log(`Setting href for ${href} to GitHub URL`);
+                    link.setAttribute('href', `https://pulkio.github.io/PortfolioData/${href}`);
+                }
             }
-        }
+        });
     });
 </script>
