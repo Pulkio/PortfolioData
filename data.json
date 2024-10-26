@@ -1,0 +1,7 @@
+[
+    { "question": "Quel est ton parcours ?", "answer": "J'ai un parcours en développement web et IA." },
+    { "question": "Quels sont tes projets ?", "answer": "Je travaille sur un portfolio interactif et un chatbot personnalisé." },
+    { "question": "Comment te contacter ?", "answer": "Vous pouvez me contacter via LinkedIn ou par email." },
+    { "question": "Quel est ton hobby ?", "answer": "J'aime la programmation et explorer de nouvelles technologies." },
+    { "question": "Où as-tu étudié ?", "answer": "J'ai étudié à l'université XYZ." }
+]

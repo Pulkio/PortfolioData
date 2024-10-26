@@ -1,0 +1,35 @@
+#chatbox {
+    width: 400px;
+    margin: 50px auto;
+    font-family: Arial, sans-serif;
+}
+
+#chat-log {
+    border: 1px solid #ccc;
+    padding: 10px;
+    height: 300px;
+    overflow-y: auto;
+    background-color: #f9f9f9;
+}
+
+.user-message {
+    text-align: right;
+    color: blue;
+    margin: 5px;
+}
+
+.bot-message {
+    text-align: left;
+    color: green;
+    margin: 5px;
+}
+
+#user-input {
+    width: calc(100% - 70px);
+    padding: 5px;
+}
+
+button {
+    width: 60px;
+    padding: 5px;
+}
