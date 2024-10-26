@@ -19,10 +19,11 @@
         const href = link.getAttribute('href');
 
         if (isGithub) {
-            // Pour index.html, ajoute ../ et pour les autres ne rien changer
-            if (href === '../index.html') {
+            // Pour index.html, redirige vers l'URL GitHub
+            if (href === 'index.html') {
                 link.setAttribute('href', `https://pulkio.github.io/PortfolioData/index.html`);
             } else {
+                // Pour les autres, ajoute le chemin approprié
                 link.setAttribute('href', `https://pulkio.github.io/PortfolioData/${href}`);
             }
         }
