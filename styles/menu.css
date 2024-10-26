@@ -42,6 +42,13 @@
     visibility: visible; /* Rendre visible */
 }
 
+/* Classe pour cacher le menu */
+#menu.hidden {
+    opacity: 0; /* Cacher le menu */
+    transform: translateY(-100%); /* Remettre le menu hors de l'écran */
+    visibility: hidden; /* Assurer que le menu n'est pas visible */
+}
+
 /* Styles pour le contenu du menu */
 .menu-content {
     text-align: center; /* Centrer le texte */
@@ -69,8 +76,4 @@
     top: 20px;
     right: 30px;
     cursor: pointer; /* Changer le curseur sur hover */
-}
-
-.hidden {
-    display: none; /* Cacher le menu par défaut */
 }
