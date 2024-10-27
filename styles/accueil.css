@@ -143,3 +143,35 @@ h1:hover, h2:hover, h3:hover {
 .desktop-menu-hint:hover {
     color: #ffcc00; /* Couleur au hover */
 }
+
+
+
+.social-media-section {
+    text-align: center; /* Centre le texte */
+    margin-top: 40px; /* Espace au-dessus de la section */
+    padding-bottom: 40px; /* Espace en bas de la section pour éviter le collage avec le footer */
+    color: #ffffff; /* Couleur du texte */
+}
+
+.social-media-section h2 {
+    margin-bottom: 20px; /* Espace en dessous du titre */
+}
+
+.social-media-icons {
+    display: flex; /* Utiliser flexbox pour aligner les icônes */
+    justify-content: center; /* Centre les icônes horizontalement */
+    gap: 20px; /* Espace entre les icônes */
+}
+
+.social-media-icons a {
+    color: #ffffff; /* Couleur blanche des icônes */
+    font-size: 36px; /* Taille des icônes (plus grande) */
+    transition: color 0.3s ease; /* Transition douce pour le changement de couleur */
+}
+
+.social-media-icons a:hover {
+    color: #ffcc00; /* Couleur au hover */
+}
+
+
+
