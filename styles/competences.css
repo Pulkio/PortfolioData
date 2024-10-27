@@ -11,10 +11,37 @@ h1:hover {
     color: #ffcc00; /* Couleur au survol */
 }
 
-/* Styles pour le canvas */
+/* Canvas - taille par défaut */
 canvas {
-    width: 100% !important; /* Largeur du graphique */
-    max-width: 800px; /* Largeur maximale */
-    height: 400px; /* Hauteur fixe */
-    margin: 0 auto; /* Centrer le graphique */
+    width: 100%;          /* Largeur responsive */
+    max-width: 800px;     /* Largeur maximale */
+    height: auto;         /* Hauteur automatique pour maintenir le ratio */
+    aspect-ratio: 2 / 1;  /* Ratio 2:1 pour conserver la proportion */
+    margin: 0 auto;       /* Centrer le graphique */
+    display: block;
 }
+
+/* Écrans petits (mobiles) */
+@media (max-width: 600px) {
+    canvas {
+        max-width: 100%;       /* Prendre toute la largeur de l'écran */
+        height: 250px;         /* Hauteur fixe pour les petits écrans */
+    }
+}
+
+/* Écrans moyens (tablettes) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    canvas {
+        max-width: 90%;        /* Largeur à 90% pour les tablettes */
+        height: 300px;         /* Hauteur ajustée pour tablettes */
+    }
+}
+
+/* Écrans larges (ordinateurs de bureau) */
+@media (min-width: 1025px) {
+    canvas {
+        max-width: 800px;      /* Limite maximale */
+        height: 400px;         /* Hauteur pour ordinateurs */
+    }
+}
+

@@ -115,6 +115,8 @@ const config = {
         }]
     },
     options: {
+        responsive: true,            // Rendre le graphique responsive
+        maintainAspectRatio: true,  // Permettre au canvas d'avoir une hauteur flexible
         animation,
         interaction: {
             intersect: false
