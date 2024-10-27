@@ -29,8 +29,8 @@
 
 /* Photo de profil */
 .profile-photo {
-    width: 200px;
-    height: 320px;
+    width: 150px;
+    height: 240px;
     border-radius: 30%;
     margin-left: 40px;
     object-fit: cover;
@@ -102,7 +102,39 @@ h1:hover, h2:hover, h3:hover {
     }
 
     .profile-photo {
-        width: 120px; /* Taille plus petite de la photo */
-        height: 192px; /* Ajuste la hauteur pour le ratio */
+        width: 75px; /* Taille plus petite de la photo */
+        height: 120px; /* Ajuste la hauteur pour le ratio */
+    }
+}
+
+
+
+/* Afficher uniquement sur les grands écrans */
+@media (min-width: 1024px) {
+    .desktop-menu-hint {
+        position: absolute;
+        top: 20px; /* Ajustez pour positionner le texte près du menu */
+        right: 60px; /* Utilisez right au lieu de left pour placer à droite */
+        color: white;
+        font-size: 0.9em;
+        display: flex;
+        align-items: center;
+        gap: 5px; /* Espace entre le texte et la flèche */
+        background-color: #121212; /* Fond semi-transparent pour meilleure lisibilité */
+        padding: 8px 12px;
+        border-radius: 5px;
+    }
+
+    .desktop-menu-hint i {
+        font-size: 1em; /* Taille de la flèche */
+        color: #ffcc00; /* Couleur jaune pour la flèche */
+        transform: rotate(180deg); /* Inverser la flèche pour qu'elle pointe vers la gauche */
+    }
+}
+
+/* Cacher le texte explicatif sur les petits écrans */
+@media (max-width: 1023px) {
+    .desktop-menu-hint {
+        display: none;
     }
 }
