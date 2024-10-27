@@ -13,7 +13,7 @@
 }
 
 .menu-icon:hover {
-    color: #FFD700; /* Changer de couleur au survol */
+    color: #ffcc00; /* Changer de couleur au survol */
 }
 
 /* Styles pour le menu */
@@ -94,5 +94,5 @@
 
 /* Couleur jaune au survol pour la croix de fermeture */
 .close:hover {
-    color: #FFD700; /* Couleur jaune au survol */
+    color: #ffcc00; /* Couleur jaune au survol */
 }

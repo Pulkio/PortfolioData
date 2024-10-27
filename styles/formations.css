@@ -13,6 +13,11 @@
     color: #ffffff; /* Jaune pour le titre de la section */
 }
 
+/* Ajoutez cette règle pour le hover */
+.formations-section h1:hover {
+    color: #ffcc00; /* Couleur au hover */
+}
+
 .formations-grid {
     display: flex;
     flex-wrap: wrap;
@@ -30,7 +35,7 @@
     transition: transform 0.3s ease;
     padding: 20px;
     align-items: center;
-    border: 1px solid #ffcc00;
+    border: 2px solid #ffcc00;
 }
 
 
@@ -125,11 +130,15 @@
     font-size: 24px;
     font-weight: bold;
     padding-bottom: 10px; /* Espace entre le texte et la bordure */
-    border-bottom: 2px solid yellow; /* Ligne de séparation jaune */
+    border-bottom: 2px solid #ffcc00; /* Ligne de séparation jaune */
     color: white; /* Couleur blanche pour les titres */
     text-align: center; /* Centrer le texte des titres */
 }
 
+/* Ajoutez cette règle pour le hover */
+.year-header:hover {
+    color: #ffcc00; /* Couleur au hover */
+}
 
 /* Styles responsives */
 @media (min-width: 600px) {

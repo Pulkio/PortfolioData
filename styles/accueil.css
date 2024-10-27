@@ -52,7 +52,7 @@
 
 /* Animation au hover pour les titres */
 h1:hover, h2:hover, h3:hover {
-    color: #FFD700;
+    color: #ffcc00;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
@@ -137,4 +137,9 @@ h1:hover, h2:hover, h3:hover {
     .desktop-menu-hint {
         display: none;
     }
+}
+
+/* Ajoutez la règle suivante pour changer la couleur au hover */
+.desktop-menu-hint:hover {
+    color: #ffcc00; /* Couleur au hover */
 }

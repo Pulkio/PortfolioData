@@ -11,6 +11,6 @@ footer {
 
 /* Changer le texte du footer en jaune au survol */
 footer p:hover {
-    color: #FFD700; /* Jaune doré au survol */
+    color: #ffcc00; /* Jaune doré au survol */
     transition: color 0.3s ease; /* Transition douce de couleur */
 }
