@@ -5,12 +5,10 @@ const data2 = [2, 5, 15, 34, 57, 75]; // Performance Data Analyse
 
 // Fonction pour créer le graphique
 function createChart() {
-    const isMobile = window.innerWidth < 600; // Détermine si l'écran est petit
-    const chartType = isMobile ? 'horizontalBar' : 'bar'; // Choisir le type de graphique
 
     // Configuration du graphique
     const config = {
-        type: chartType, // Utiliser le type basé sur la taille de l'écran
+        type: 'bar', // Utiliser le type basé sur la taille de l'écran
         data: {
             labels: years, // Les années sur l'axe X
             datasets: [{
@@ -39,20 +37,32 @@ function createChart() {
                     title: {
                         display: true,
                         text: 'Niveau de Maîtrise (%)',
-                        color: '#ffffff' // Couleur du titre de l'axe Y en blanc
+                        color: '#ffffff', // Couleur du titre de l'axe Y en blanc
+                        font: {
+                            size: 16 // Augmente la taille de la police ici (par exemple, 18)
+                        }
                     },
                     ticks: {
-                        color: '#ffffff' // Couleur des ticks de l'axe Y en blanc
+                        color: '#ffffff', // Couleur des ticks de l'axe Y en blanc
+                        font: {
+                            size: 14 // Augmente la taille de la police ici (par exemple, 18)
+                        }
                     }
                 },
                 x: {
                     title: {
                         display: true,
                         text: 'Années',
-                        color: '#ffffff' // Couleur du titre de l'axe X en blanc
+                        color: '#ffffff', // Couleur du titre de l'axe X en blanc
+                        font: {
+                            size: 16 // Augmente la taille de la police ici (par exemple, 18)
+                        }
                     },
                     ticks: {
-                        color: '#ffffff' // Couleur des ticks de l'axe X en blanc
+                        color: '#ffffff', // Couleur des ticks de l'axe X en blanc
+                        font: {
+                            size: 14 // Augmente la taille de la police ici (par exemple, 18)
+                        }
                     }
                 }
             },
@@ -61,13 +71,19 @@ function createChart() {
                     display: true,
                     position: 'top',
                     labels: {
-                        color: '#ffffff' // Couleur de la légende en blanc
+                        color: '#ffffff', // Couleur de la légende en blanc
+                        font: {
+                            size: 16 // Augmente la taille de la police ici
+                        }
                     }
                 },
                 title: {
                     display: true,
                     text: 'Performance par Année',
-                    color: '#ffffff' // Couleur du titre en blanc
+                    color: '#ffffff', // Couleur du titre en blanc
+                    font: {
+                        size: 16 // Augmente la taille de la police ici (par exemple, 18)
+                    }
                 },
                 datalabels: { // Configuration des étiquettes de données
                     anchor: 'end',
@@ -92,8 +108,77 @@ chartContainer.style.height = `${Math.max(window.innerHeight * 0.5, 300)}px`; //
 // Créer le graphique au chargement de la page
 createChart();
 
-// Optionnel : Recréer le graphique lors du redimensionnement de la fenêtre
-window.addEventListener('resize', () => {
-    chartContainer.style.height = `${Math.max(window.innerHeight * 0.5, 300)}px`; // Réajuster la hauteur
-    createChart();
-});
+
+
+
+
+
+// Doughnut Data
+const doughnutData = {
+    labels: ['Java', 'R', 'C#', 'C++', 'Python', 'PHP', 'SQL', 'JavaScript'],
+    datasets: [{
+        label: 'Niveau de maîtrise',
+        data: [15, 25, 10, 7, 10, 4, 15, 6], // Valeurs de test
+        backgroundColor: [
+            '#ff6384',
+            '#36a2eb',
+            '#ffce56',
+            '#ff9f40',
+            '#4bc0c0',
+            '#9966ff',
+            '#ffcd56',
+            '#ff5733'
+        ],
+        hoverOffset: 0 // Réduire le décalage lors du survol
+    }]
+};
+
+// Configuration du Doughnut Chart
+const configDoughnut = {
+    type: 'doughnut',
+    data: doughnutData,
+    options: {
+        responsive: true,
+        interaction: {
+            mode: 'nearest', // Utiliser le mode le plus proche pour l'interaction
+            intersect: false // Désactiver l'intersection
+        },
+        plugins: {
+            legend: {
+                display: false, // Désactiver la légende en haut
+            },
+            title: {
+                display: true,
+                text: 'Maîtrise des Langages de Programmation',
+                color: '#ffffff', // Couleur du titre
+                font: {
+                    size: 16 // Augmente la taille de la police ici (par exemple, 18)
+                }
+            },
+            datalabels: {
+                color: '#ffffff',
+                anchor: 'center', // Positionner au centre de chaque tranche
+                align: 'center', // Centrer le texte
+                formatter: (value, context) => {
+                    const label = context.chart.data.labels[context.dataIndex]; // Récupérer le label correspondant
+                    return `${label}: ${value}`; // Affiche le label et la valeur
+                },
+                backgroundColor: '#000000', // Couleur de fond
+                padding: 6 // Ajoute un peu d'espace autour du texte
+            }
+        },
+        elements: {
+            arc: {
+                borderWidth: 0 // Supprime la bordure des segments
+            }
+        },
+        animations: false // Désactive les animations pour le doughnut chart
+    },
+    plugins: [ChartDataLabels] // Assurez-vous d'utiliser le plugin ici
+};
+
+
+// Créer le Doughnut Chart
+const ctxDoughnut = document.getElementById('doughnutChart').getContext('2d');
+doughnutChart = new Chart(ctxDoughnut, configDoughnut); // Stocke la référence au graphique
+
