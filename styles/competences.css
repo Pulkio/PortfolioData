@@ -1,52 +1,103 @@
+/* Styles pour le titre principal */
 h1 {
-    font-size: 2.5em;          /* Taille de la police */
-    margin-bottom: 30px;      /* Marge en dessous */
-    padding-top: 70px;        /* Espace au-dessus du titre */
-    text-align: center;        /* Centrer le texte */
-    color: #ffffff;           /* Couleur blanche pour le titre */
+    font-size: 2.5em;          
+    margin-bottom: 30px;      
+    padding-top: 70px;        
+    text-align: center;        
+    color: #ffffff;           
+    transition: color 0.3s, text-shadow 0.3s; 
+    text-shadow: 0px 0px 10px rgba(255, 204, 0, 0.8); /* Ombre de texte */
 }
 
 /* Changement de couleur au survol */
 h1:hover {
-    color: #ffcc00; /* Couleur au survol */
+    color: #ffcc00; 
+    text-shadow: 0px 0px 20px rgba(255, 204, 0, 1); /* Ombre plus prononcée */
 }
 
 /* Wrapper pour limiter la taille */
 .chart-container {
-    width: 90vw;             /* Prend jusqu’à 90% de la largeur de la fenêtre */
-    max-width: 800px;        /* Largeur maximale */
-    margin: 0 auto;          /* Centrer le graphique */
-    padding: 10px;           /* Ajouter un padding pour éviter le débordement */
-    box-sizing: border-box;  /* Inclure padding et marges dans la taille totale */
+    width: 90vw;             
+    max-width: 800px;        
+    margin: 0 auto;          
+    padding: 10px;           
+    box-sizing: border-box;  
 }
 
 /* Canvas responsive */
 canvas {
-    width: 100% !important;  /* Remplit le conteneur */
-    height: auto !important; /* Ajuste la hauteur automatiquement */
+    width: 100% !important;  
+    height: auto !important; 
+}
+
+/* Éléments d'introduction */
+.intro-text {
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 1.2em; 
+    color: #ffffff; 
+    margin: 20px 0; 
+    text-align: center; 
+    transition: transform 0.3s, color 0.3s; 
+    opacity: 0; /* Commence invisible */
+    animation: fadeIn 1s forwards; /* Animation fade-in */
+}
+
+/* Animation fade-in */
+@keyframes fadeIn {
+    to {
+        opacity: 1; /* Fin de l'animation avec visibilité */
+    }
+}
+
+.intro-text:hover {
+    transform: scale(1.05); 
+    color: #ffcc00; /* Changer la couleur au survol */
+}
+
+/* Texte explicatif du graphique */
+.graph-explanation {
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 1.1em; 
+    color: #ffffff; 
+    margin: 20px 0; 
+    text-align: center; 
+    transition: color 0.3s, text-shadow 0.3s; 
+    text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5); /* Ombre de texte */
+}
+
+.graph-explanation:hover {
+    color: #ffcc00; 
+    text-shadow: 0px 0px 10px rgba(255, 204, 0, 1); /* Ombre plus prononcée */
 }
 
 /* Petits écrans (mobiles) */
 @media (max-width: 600px) {
     canvas {
-        width: 95vw;           /* Légèrement plus petit que la largeur de la fenêtre */
-        height: auto;          /* Hauteur calculée automatiquement */
+        width: 95vw;           
+        height: auto;          
+    }
+
+    .intro-text, .graph-explanation {
+        font-size: 1em; 
     }
 }
 
 /* Écrans moyens (tablettes) */
 @media (min-width: 601px) and (max-width: 1024px) {
     canvas {
-        width: 90vw;           /* Largeur ajustée pour s'adapter aux tablettes */
+        width: 90vw;           
         height: auto;
+    }
+
+    .intro-text, .graph-explanation {
+        font-size: 1.1em; 
     }
 }
 
 /* Grands écrans (ordinateurs) */
 @media (min-width: 1025px) {
     canvas {
-        max-width: 800px;      /* Largeur maximale fixée */
+        max-width: 800px;      
         height: auto;
     }
 }
-
