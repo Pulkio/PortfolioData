@@ -2,7 +2,7 @@
 function loadMenu() {
     const menuContainer = document.getElementById("menu");
     console.log("here1")
-    fetch("../html/menu.html") // Vérifiez ce chemin
+    fetch("menu.html") // Vérifiez ce chemin
         .then(response => {
             if (!response.ok) {
                 throw new Error('Erreur réseau');

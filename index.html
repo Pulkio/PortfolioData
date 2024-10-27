@@ -2,67 +2,10 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Portfolio</title>
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/chat.css">
-    <link rel="stylesheet" href="styles/footer.css">
-    <link rel="stylesheet" href="styles/menu.css"> <!-- Lien vers le CSS du menu -->
-    <link rel="stylesheet" href="styles/accueil.css"> <!-- Lien vers le CSS d'accueil -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Importer Font Awesome pour les icônes -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <title>Redirection</title>
+    <meta http-equiv="refresh" content="0;url=html/accueil.html">
 </head>
 <body>
-    <div id="menu-container">
-        <div class="menu-icon" onclick="toggleMenu()">
-            <i class="fas fa-bars"></i> <!-- Icône de menu burger -->
-        </div>
-        <div id="menu" class="hidden"> <!-- Conteneur pour le menu -->
-            <!-- Contenu chargé ici -->
-        </div>
-    </div>
-
-        <!-- Section avec photo et informations -->
-    <section class="info-section">
-        <img src="images/profil2.png" alt="Guillaume COBAT" class="profile-photo">
-        <div class="info-text">
-            <h1 class="animate-title">Bienvenue sur mon portfolio !</h1>
-            <br>
-            <h2 class="animate-fadein">Je m'appelle Guillaume COBAT</h2>
-            <br>
-            <h3 class="animate-fadein">Développeur / Data Analyst</h3>
-        </div>
-    </section>
-
-
-    <main>
-        <div class="chat-prompt">Posez-moi une question !</div> <!-- Texte centré -->
-        <div id="chat-log" class="chat-log"></div> <!-- Log de chat pour afficher les messages -->
-        <input type="text" id="user-input" placeholder="Votre question...">
-        <div class="button-container">
-            <button onclick="sendMessage()">Envoyer</button>
-            <button onclick="clearChat()" class="clear-button">Effacer le chat</button> <!-- Bouton pour effacer le chat -->
-        </div>
-    </main>
-    
-    
-
-    <div class="chat-box" id="chat-box">
-        <div class="chat-header">
-            <h3>Chatbot</h3>
-            <button onclick="toggleChat()">✖</button>
-        </div>
-        <div class="chat-log" id="chat-log-inner"></div> <!-- Log de chat pour afficher les messages -->
-        <input type="text" id="user-input-chat" placeholder="Votre question...">
-        <button onclick="sendMessage()">Envoyer</button>
-    </div>
-
-    <footer>
-        <p>&copy; 2024 Mon Portfolio</p>
-    </footer>
-
-    <script src="scripts/utils.js"></script>
-    <script src="scripts/chat.js"></script>
-    <script src="scripts/menu.js"></script> <!-- Inclusion du script menu.js -->
+    <p>Si vous n'êtes pas redirigé automatiquement, <a href="html/accueil.html">cliquez ici</a>.</p>
 </body>
 </html>

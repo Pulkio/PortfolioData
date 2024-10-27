@@ -3,7 +3,7 @@ let qaData = [];
 // Charger les données depuis le fichier JSON
 async function loadData() {
     try {
-        const response = await fetch('data/data.json');
+        const response = await fetch('../data/data.json');
         if (!response.ok) throw new Error("Erreur lors du chargement des données");
         qaData = await response.json();
         console.log("Données chargées :", qaData);
