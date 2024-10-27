@@ -1,7 +1,8 @@
 // Fonction pour charger le menu depuis menu.html
 function loadMenu() {
     const menuContainer = document.getElementById("menu");
-    fetch("html/menu.html") // Vérifiez ce chemin
+    console.log("here1")
+    fetch("../html/menu.html") // Vérifiez ce chemin
         .then(response => {
             if (!response.ok) {
                 throw new Error('Erreur réseau');
@@ -10,16 +11,15 @@ function loadMenu() {
         })
         .then(data => {
             menuContainer.innerHTML = data; // Charger le contenu ici
-            adjustMenuLinks(); // Appeler la fonction pour ajuster les liens après le chargement du menu
         })
         .catch(error => console.error('Erreur lors du chargement du menu:', error));
 }
 
-
 // Fonction pour afficher/masquer le menu avec animation
 function toggleMenu() {
     const menu = document.getElementById("menu");
-    
+    console.log("here2")
+
     if (menu.classList.contains("visible")) {
         // Si le menu est visible, le cacher avec animation
         menu.classList.remove("visible");
