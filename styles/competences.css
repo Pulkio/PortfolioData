@@ -11,37 +11,42 @@ h1:hover {
     color: #ffcc00; /* Couleur au survol */
 }
 
-/* Canvas - taille par défaut */
-canvas {
-    width: 100%;          /* Largeur responsive */
-    max-width: 800px;     /* Largeur maximale */
-    height: auto;         /* Hauteur automatique pour maintenir le ratio */
-    aspect-ratio: 2 / 1;  /* Ratio 2:1 pour conserver la proportion */
-    margin: 0 auto;       /* Centrer le graphique */
-    display: block;
+/* Wrapper pour limiter la taille */
+.chart-container {
+    width: 90vw;             /* Prend jusqu’à 90% de la largeur de la fenêtre */
+    max-width: 800px;        /* Largeur maximale */
+    margin: 0 auto;          /* Centrer le graphique */
+    padding: 10px;           /* Ajouter un padding pour éviter le débordement */
+    box-sizing: border-box;  /* Inclure padding et marges dans la taille totale */
 }
 
-/* Écrans petits (mobiles) */
+/* Canvas responsive */
+canvas {
+    width: 100% !important;  /* Remplit le conteneur */
+    height: auto !important; /* Ajuste la hauteur automatiquement */
+}
+
+/* Petits écrans (mobiles) */
 @media (max-width: 600px) {
     canvas {
-        max-width: 100%;       /* Prendre toute la largeur de l'écran */
-        height: 250px;         /* Hauteur fixe pour les petits écrans */
+        width: 95vw;           /* Légèrement plus petit que la largeur de la fenêtre */
+        height: auto;          /* Hauteur calculée automatiquement */
     }
 }
 
 /* Écrans moyens (tablettes) */
 @media (min-width: 601px) and (max-width: 1024px) {
     canvas {
-        max-width: 90%;        /* Largeur à 90% pour les tablettes */
-        height: 300px;         /* Hauteur ajustée pour tablettes */
+        width: 90vw;           /* Largeur ajustée pour s'adapter aux tablettes */
+        height: auto;
     }
 }
 
-/* Écrans larges (ordinateurs de bureau) */
+/* Grands écrans (ordinateurs) */
 @media (min-width: 1025px) {
     canvas {
-        max-width: 800px;      /* Limite maximale */
-        height: 400px;         /* Hauteur pour ordinateurs */
+        max-width: 800px;      /* Largeur maximale fixée */
+        height: auto;
     }
 }
 
