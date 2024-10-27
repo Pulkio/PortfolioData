@@ -1,0 +1,150 @@
+.formations-section {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: auto;
+    color: #ffffff;
+    text-align: center;
+}
+
+
+.formations-section h1 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #ffffff; /* Jaune pour le titre de la section */
+}
+
+.formations-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.formation-item {
+    flex: 1 0 300px; /* This will ensure that each formation-item takes up the same space and has a minimum width of 300px */
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+    padding: 20px;
+    align-items: center;
+    border: 1px solid #ffcc00;
+}
+
+
+.formation-item:hover {
+    transform: scale(1.03); /* Effet de zoom au survol */
+}
+
+/* Image avec taille fixe et sans tronquage */
+.formation-image {
+    width: 200px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+/* Informations de chaque formation */
+.formation-info {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Titre en blanc, jaune au survol */
+.formation-info h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #ffffff; /* Titre en blanc par défaut */
+    transition: color 0.3s ease;
+}
+
+.formation-info h2:hover {
+    color: #ffcc00; /* Jaune au survol */
+}
+
+/* Nouveau style pour le rôle */
+.formation-role {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #ffffff; /* Texte en blanc par défaut */
+    margin-bottom: 10px;
+    text-decoration: underline; /* Soulignement au lieu de l'encadré */
+    transition: color 0.3s ease; /* Transition pour le changement de couleur */
+}
+
+.formation-role:hover {
+    color: #ffcc00; /* Jaune au survol */
+}
+
+/* Ligne avec date et lieu (sans soulignement) */
+.formation-meta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+    color: #ffffff;
+    margin: 10px 0 15px;
+    font-weight: 600;
+    gap: 10px;
+}
+
+.formation-date,
+.formation-location {
+    font-weight: bold;
+    color: #ffffff; /* Texte en blanc par défaut */
+    transition: color 0.3s ease; /* Transition pour le changement de couleur */
+}
+
+.formation-date:hover,
+.formation-location:hover {
+    color: #ffcc00; /* Jaune au survol */
+}
+
+/* Espacement pour la description */
+.formation-info p {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #e0e0e0;
+    margin-top: 15px;
+    transition: color 0.3s ease; /* Transition pour le changement de couleur */
+    text-align: justify; /* Justifie le texte dans le paragraphe */
+}
+
+.formation-info p:hover {
+    color: #ffcc00; /* Jaune au survol */
+}
+
+/* Titres des années */
+.year-header {
+    margin: 40px 0 20px; /* Espacement supérieur et inférieur */
+    font-size: 24px;
+    font-weight: bold;
+    border-bottom: 2px solid yellow; /* Ligne de séparation jaune */
+    color: white; /* Couleur blanche pour les titres */
+    text-align: center; /* Centrer le texte des titres */
+}
+
+.separator {
+    height: 10px; /* Espace entre les sections */
+    background-color: yellow; /* Ligne de séparation jaune */
+    margin: 10px 0; /* Espacement au-dessus et au-dessous */
+}
+
+/* Styles responsives */
+@media (min-width: 600px) {
+    .formations-grid {
+        grid-template-columns: 1fr 1fr; /* Deux colonnes à partir de 600px */
+    }
+}
+
+@media (min-width: 900px) {
+    .formations-grid {
+        grid-template-columns: 1fr 1fr 1fr; /* Trois colonnes à partir de 900px */
+    }
+}
+
