@@ -40,16 +40,16 @@ for (let i = 0; i < totalDays; i++) {
     // Augmentation de data selon les périodes définies
     if (currentDate < new Date('2021-01-01')) {
         // Augmentation de 0 à 55 % entre septembre 2019 et décembre 2021
-        prev2 += (15 / 485); // 485 jours entre septembre 2019 et fin 2021
+        prev2 += (8 / 485); // 485 jours entre septembre 2019 et fin 2021
     } else if (currentDate < new Date('2022-01-01')) {
         // Augmentation de 55 % à 65 % entre 2021 et fin 2021
-        prev2 += (25 - 15) / (365); // 365 jours de 2021 à 2022
+        prev2 += (13 - 8) / (365); // 365 jours de 2021 à 2022
     } else if (currentDate < new Date('2023-01-01')) {
         // Augmentation de 65 % à 70 % entre 2022 et fin 2024
-        prev2 += (55 - 25) / (365); // 730 jours de 2022 à 2024
+        prev2 += (25 - 15) / (365); // 730 jours de 2022 à 2024
     } else if (currentDate < new Date('2024-11-30')) {
         // Continuer jusqu'à fin 2024
-        prev2 += (70 - 55) / (690); // 730 jours de 2022 à 2024
+        prev2 += (70 - 25) / (690); // 730 jours de 2022 à 2024
     }
     
     // Ajouter les données au tableau
@@ -100,12 +100,14 @@ const config = {
     type: 'line',
     data: {
         datasets: [{
+            label: 'Développement informatique', // Légende pour le premier dataset
             borderColor: "#ff0000",
             borderWidth: 1,
             radius: 0,
             data: data,
         },
         {
+            label: 'Data Analyse', // Légende pour le deuxième dataset
             borderColor: "#00FFFF",
             borderWidth: 1,
             radius: 0,
@@ -118,11 +120,18 @@ const config = {
             intersect: false
         },
         plugins: {
-            legend: false
+            legend: {
+                display: true, // Afficher la légende
+                position: 'top' // Positionner la légende en haut
+            }
         },
         scales: {
             x: {
                 type: 'linear',
+                title: {
+                    display: true,
+                    text: 'Temps' // Légende de l'axe des abscisses
+                },
                 ticks: {
                     callback: function(value, index) {
                         return labels[index] || ''; // Utiliser les étiquettes de mois
@@ -131,12 +140,15 @@ const config = {
             },
             y: {
                 beginAtZero: true,
-                max: 100 // Pour assurer que l'axe Y atteigne jusqu'à 75%
+                max: 100, // Pour assurer que l'axe Y atteigne jusqu'à 75%
+                title: {
+                    display: true,
+                    text: 'Pourcentage de maîtrise' // Légende de l'axe des ordonnées
+                }
             }
         }
     }
 };
-// Config-----
 
 
 var myChart = new Chart(
