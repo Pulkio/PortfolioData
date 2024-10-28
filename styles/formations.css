@@ -134,7 +134,7 @@
     margin: 40px 0 30px; /* Ajustez ici la marge inférieure pour ajouter de l'espace */
     font-size: 24px;
     font-weight: bold;
-    padding-bottom: 10px; /* Espace entre le texte et la bordure */
+    padding-bottom: 30px; /* Espace entre le texte et la bordure */
     border-bottom: 2px solid #ffcc00; /* Ligne de séparation jaune */
     color: white; /* Couleur blanche pour les titres */
     text-align: center; /* Centrer le texte des titres */
