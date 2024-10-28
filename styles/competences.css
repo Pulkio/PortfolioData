@@ -144,14 +144,11 @@ canvas {
 }
 
 .radar-container {
-    width: auto;
+    width: auto; /* Utilise 70% de la largeur de la fenêtre */
     height: auto;
     box-sizing: border-box;
-    margin: 0 auto;
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center; /* Centre verticalement le canvas */
-    max-width: 80vw; /* Limite la largeur pour éviter un trop grand étirement */
-    max-height: 80vh; /* Limite la hauteur pour qu'il reste visible sur l'écran */
+    margin: 0 auto; /* Centre le conteneur */
+    padding: 10px; /* Ajoute un peu de remplissage */
+    display: flex; /* Utilise flexbox pour centrer le contenu */
+    justify-content: center; /* Centre horizontalement */
 }
