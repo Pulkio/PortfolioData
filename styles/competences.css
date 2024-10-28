@@ -142,3 +142,11 @@ canvas {
     color: #ffffff; /* Couleur du texte, changez si nécessaire */
     margin: 20px 0; /* Ajuste l'espace autour du titre */
 }
+
+.radar-container {
+    width: 40vw;
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 10px;
+    box-sizing: border-box;
+}

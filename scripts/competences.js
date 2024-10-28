@@ -161,5 +161,82 @@ const configDoughnut = {
 // Créer le Donut Chart et ajuster la hauteur au chargement de la page
 const ctxDoughnut = document.getElementById('doughnutChart').getContext('2d');
 doughnutChart = new Chart(ctxDoughnut, configDoughnut); // Stocke la référence au graphique
-adjustDoughnutHeight();
+
+
+
+// Données pour le Radar Chart
+const radarLabels = [
+    'Communication',
+    'Travail d’équipe',
+    'Résolution de problèmes',
+    'Adaptabilité',
+    'Pensée critique',
+    'Gestion du temps',
+    'Créativité',
+    'Curiosité', // Remplacé par Curiosité
+    'Empathie',
+    'Esprit d\'initiative'
+];
+
+const radarData = {
+    labels: radarLabels,
+    datasets: [{
+        label: 'Niveau de Soft Skills',
+        data: [80, 75, 90, 85, 70, 80, 88, 75, 77, 65], // Remplace ces valeurs par tes propres évaluations
+        backgroundColor: 'rgba(54, 162, 235, 0.5)', // Couleur de fond
+        borderColor: 'rgba(54, 162, 235, 1)', // Couleur de la bordure
+        borderWidth: 1,
+        pointBackgroundColor: 'rgba(54, 162, 235, 1)', // Couleur des points
+    }]
+};
+
+// Configuration du Radar Chart
+const configRadar = {
+    type: 'radar',
+    data: radarData,
+    options: {
+        responsive: true,
+        scales: {
+            r: {
+                min: 0,      // Minimum de l'échelle
+                max: 100,    // Maximum de l'échelle
+                ticks: {
+                    stepSize: 10, // Définir l'intervalle de 10 en 10
+                    color: '#000000', // Couleur des étiquettes de l'échelle
+                },
+                grid: {
+                    color: '#ffffff', // Couleur de la grille
+                },
+                pointLabels: {
+                    fontSize: 18, // Taille de la police pour les étiquettes
+                    color: '#ffffff' // Couleur des étiquettes
+                },
+                angleLines: {
+                    color: '#ffffff', // Couleur des lignes d'angle
+                },
+            }
+        },
+        elements: {
+            line: {
+                tension: 0.1 // Ajuste la courbure des lignes si nécessaire
+            }
+        },
+        plugins: {
+            legend: {
+                display: true, // Affiche la légende
+                labels: {
+                    color: '#ffffff' // Couleur des étiquettes de la légende
+                }
+            },
+            datalabels: {
+                display: false // Désactive les étiquettes de données
+            }
+        }
+    },
+    plugins: [ChartDataLabels]
+};
+
+// Créer le Radar Chart et ajuster la hauteur au chargement de la page
+const ctxRadar = document.getElementById('radarChart').getContext('2d');
+const radarChart = new Chart(ctxRadar, configRadar); // Stocke la référence au graphique
 
