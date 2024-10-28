@@ -173,16 +173,16 @@ const radarLabels = [
     'Pensée critique',
     'Gestion du temps',
     'Créativité',
-    'Curiosité', // Remplacé par Curiosité
-    'Empathie',
-    'Esprit d\'initiative'
+    'Curiosité',
+    'Autonomie',        // Nouvelle compétence ajoutée
+    'Débrouillardise'   // Nouvelle compétence ajoutée
 ];
 
 const radarData = {
     labels: radarLabels,
     datasets: [{
         label: 'Niveau de Soft Skills',
-        data: [80, 75, 90, 85, 70, 80, 88, 75, 77, 65], // Remplace ces valeurs par tes propres évaluations
+        data: [83, 75, 79, 85, 81, 77, 86, 72, 88, 92], // Remplace ces valeurs par tes propres évaluations
         backgroundColor: 'rgba(54, 162, 235, 0.5)', // Couleur de fond
         borderColor: 'rgba(54, 162, 235, 1)', // Couleur de la bordure
         borderWidth: 1,
@@ -190,7 +190,7 @@ const radarData = {
     }]
 };
 
-// Configuration du Radar Chart
+// Configuration initiale du Radar Chart
 const configRadar = {
     type: 'radar',
     data: radarData,
@@ -198,45 +198,59 @@ const configRadar = {
         responsive: true,
         scales: {
             r: {
-                min: 0,      // Minimum de l'échelle
-                max: 100,    // Maximum de l'échelle
+                min: 0,
+                max: 100,
                 ticks: {
-                    stepSize: 10, // Définir l'intervalle de 10 en 10
-                    color: '#000000', // Couleur des étiquettes de l'échelle
+                    stepSize: 20,
+                    color: '#000000',
                 },
                 grid: {
-                    color: '#ffffff', // Couleur de la grille
+                    color: '#ffffff',
                 },
                 pointLabels: {
-                    fontSize: 18, // Taille de la police pour les étiquettes
-                    color: '#ffffff' // Couleur des étiquettes
+                    font: {
+                        size: calculateFontSize(), // Utilisation de la fonction calculateFontSize
+                    },
+                    color: '#ffffff'
                 },
                 angleLines: {
-                    color: '#ffffff', // Couleur des lignes d'angle
+                    color: '#ffffff',
                 },
             }
         },
         elements: {
             line: {
-                tension: 0.1 // Ajuste la courbure des lignes si nécessaire
+                tension: 0.1
             }
         },
         plugins: {
             legend: {
-                display: true, // Affiche la légende
+                display: false,
                 labels: {
-                    color: '#ffffff' // Couleur des étiquettes de la légende
+                    color: '#ffffff'
                 }
             },
             datalabels: {
-                display: false // Désactive les étiquettes de données
+                display: false
             }
         }
     },
     plugins: [ChartDataLabels]
 };
 
-// Créer le Radar Chart et ajuster la hauteur au chargement de la page
-const ctxRadar = document.getElementById('radarChart').getContext('2d');
-const radarChart = new Chart(ctxRadar, configRadar); // Stocke la référence au graphique
+// Fonction de calcul de la taille de la police
+function calculateFontSize() {
+    const baseFontSize = 16; // Taille de police de base
+    const scaleFactor = window.innerWidth / 1900; // Ajustement pour des écrans de 1900px comme référence
+    return Math.max(baseFontSize * scaleFactor, 10); // Limite minimale de 10px pour la lisibilité
+}
 
+// Créer le Radar Chart
+const ctxRadar = document.getElementById('radarChart').getContext('2d');
+const radarChart = new Chart(ctxRadar, configRadar); 
+
+// Mettre à jour la taille de police lors du redimensionnement de la fenêtre
+window.addEventListener('resize', () => {
+    radarChart.options.scales.r.pointLabels.font.size = calculateFontSize();
+    radarChart.update(); // Applique les changements au chart
+});
