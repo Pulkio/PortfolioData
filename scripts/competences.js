@@ -182,11 +182,11 @@ const radarData = {
     labels: radarLabels,
     datasets: [{
         label: 'Niveau de Soft Skills',
-        data: [83, 75, 79, 85, 78, 77, 86, 72, 88, 92], // Remplace ces valeurs par tes propres évaluations
+        data: [86, 75, 79, 85, 78, 77, 86, 72, 88, 92], // Remplace ces valeurs par tes propres évaluations
         backgroundColor: 'rgba(54, 162, 235, 0.5)', // Couleur de fond
         borderColor: 'rgba(54, 162, 235, 1)', // Couleur de la bordure
         borderWidth: 1,
-        pointBackgroundColor: 'rgba(54, 162, 235, 1)', // Couleur des points
+        pointBackgroundColor: '#ffffff', // Couleur des points
     }]
 };
 
@@ -209,7 +209,7 @@ const configRadar = {
                 },
                 pointLabels: {
                     font: {
-                        size: calculateFontSize(), // Utilisation de la fonction calculateFontSize
+                        size: calculateFontSize(),
                     },
                     color: '#ffffff'
                 },
@@ -221,6 +221,12 @@ const configRadar = {
         elements: {
             line: {
                 tension: 0.1
+            },
+            point: {
+                radius: 6, // Taille des points (augmenter pour rendre les points plus gros)
+                backgroundColor: '#ffffff', // Couleur de fond des points
+                borderColor: 'rgba(54, 162, 235, 1)', // Couleur de bordure des points
+                borderWidth: 2 // Largeur de la bordure des points
             }
         },
         plugins: {
@@ -237,6 +243,7 @@ const configRadar = {
     },
     plugins: [ChartDataLabels]
 };
+
 
 // Fonction de calcul de la taille de la police
 function calculateFontSize() {

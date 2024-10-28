@@ -19,8 +19,10 @@ h1:hover {
     width: 90vw;
     max-width: 800px;
     margin: 0 auto;
-    padding: 10px;
+    padding: 20px 0;
     box-sizing: border-box;
+    margin-top: 40px;
+    margin-bottom: 60px;
 }
 
 /* Canvas responsive */
@@ -63,12 +65,52 @@ canvas {
     max-width: 70vw;
     transition: color 0.3s, text-shadow 0.3s;
     text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5);
+    line-height: 1.6; /* Pour plus de lisibilité */
 }
 
 .graph-explanation:hover {
     color: #ffcc00;
 }
 
+/* Titre pour chaque graphique */
+.graph-title {
+    font-size: 1.4em;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: underline;
+    color: #ffffff;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+/* Wrapper pour le Doughnut Chart */
+.doughnut-container {
+    width: 40vw;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px 0;
+    box-sizing: border-box;
+}
+
+/* Canvas pour Doughnut */
+.doughnut-chart {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 400px;
+}
+
+/* Wrapper pour le Radar Chart */
+.radar-container {
+    width: auto;
+    height: auto;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 60px;
+}
 
 /* Responsivité pour petits écrans */
 @media (max-width: 600px) {
@@ -80,6 +122,11 @@ canvas {
     .intro-text, .graph-explanation, .doughnut-explanation, .graph-title {
         font-size: 1em;
         max-width: 90%; /* Utilise jusqu'à 90% de la largeur de l'écran */
+    }
+
+    .doughnut-container {
+        width: 80vw;
+        height: auto;
     }
 }
 
@@ -93,6 +140,10 @@ canvas {
     .intro-text, .graph-explanation, .doughnut-explanation, .graph-title {
         font-size: 1.1em;
     }
+
+    .doughnut-container {
+        width: 50vw;
+    }
 }
 
 /* Grands écrans (ordinateurs) */
@@ -101,54 +152,4 @@ canvas {
         max-width: 800px;
         height: auto;
     }
-}
-
-/* Wrapper pour le Doughnut Chart */
-.doughnut-container {
-    width: 40vw;
-    max-width: 800px;
-    margin: 30px auto;
-    padding: 10px;
-    box-sizing: border-box;
-}
-
-/* Canvas pour Doughnut */
-.doughnut-chart {
-    width: 100% !important;
-    height: auto !important;
-    max-height: 400px;
-}
-
-/* Media query pour les petits écrans */
-@media (max-width: 1200px) {
-    .doughnut-container {
-        width: 50vw;
-        height: auto;
-    }
-}
-
-@media (max-width: 600px) {
-    .doughnut-container {
-        width: 80vw;
-        height: auto;
-    }
-}
-
-
-.graph-title {
-    font-size: 16px; /* Ajustez la taille de la police ici */
-    text-align: center;
-    text-decoration: underline; /* Souligne le texte */
-    color: #ffffff; /* Couleur du texte, changez si nécessaire */
-    margin: 20px 0; /* Ajuste l'espace autour du titre */
-}
-
-.radar-container {
-    width: auto; /* Utilise 70% de la largeur de la fenêtre */
-    height: auto;
-    box-sizing: border-box;
-    margin: 0 auto; /* Centre le conteneur */
-    padding: 10px; /* Ajoute un peu de remplissage */
-    display: flex; /* Utilise flexbox pour centrer le contenu */
-    justify-content: center; /* Centre horizontalement */
 }
