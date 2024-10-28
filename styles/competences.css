@@ -105,7 +105,7 @@ canvas {
 
 /* Wrapper pour le Doughnut Chart */
 .doughnut-container {
-    width: 30vw;             /* Prend jusqu’à 90% de la largeur de la fenêtre */
+    width: 40vw;             /* Prend jusqu’à 90% de la largeur de la fenêtre */
     max-width: 800px;       /* Largeur maximale */
     margin: 30px auto;      /* Centrer le graphique avec un espacement */
     padding: 10px;          /* Ajouter un padding pour éviter le débordement */
@@ -117,4 +117,20 @@ canvas {
     width: 100% !important;  /* Assurez-vous que le canvas prend toute la largeur */
     height: auto !important;  /* Assurez-vous que la hauteur est automatique */
     max-height: 400px;       /* Limite la hauteur maximale du graphique */
+}
+
+/* Media query pour les petits écrans */
+@media (max-width: 1200px) {
+    .doughnut-container {
+        width: 50vw; /* Prend 70% de la largeur de la fenêtre pour les petits écrans */
+        height: auto; /* Peut ajuster la hauteur si nécessaire */
+    }
+}
+
+/* Media query pour les petits écrans */
+@media (max-width: 600px) {
+    .doughnut-container {
+        width: 80vw; /* Prend 70% de la largeur de la fenêtre pour les petits écrans */
+        height: auto; /* Peut ajuster la hauteur si nécessaire */
+    }
 }

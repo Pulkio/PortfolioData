@@ -113,72 +113,71 @@ createChart();
 
 
 
-// Doughnut Data
+// Données du Donut Chart
 const doughnutData = {
     labels: ['Java', 'R', 'C#', 'C++', 'Python', 'PHP', 'SQL', 'JavaScript'],
     datasets: [{
         label: 'Niveau de maîtrise',
         data: [15, 25, 10, 7, 10, 4, 15, 6], // Valeurs de test
         backgroundColor: [
-            '#ff6384',
-            '#36a2eb',
-            '#ffce56',
-            '#ff9f40',
-            '#4bc0c0',
-            '#9966ff',
-            '#ffcd56',
-            '#ff5733'
+            '#ff6384', '#36a2eb', '#ffce56', '#ff9f40',
+            '#4bc0c0', '#9966ff', '#ffcd56', '#ff5733'
         ],
-        hoverOffset: 0 // Réduire le décalage lors du survol
+        hoverOffset: 0 // Réduit le décalage lors du survol
     }]
 };
 
-// Configuration du Doughnut Chart
+// Configuration du Donut Chart
 const configDoughnut = {
     type: 'doughnut',
     data: doughnutData,
     options: {
         responsive: true,
+        maintainAspectRatio: true,
         interaction: {
-            mode: 'nearest', // Utiliser le mode le plus proche pour l'interaction
-            intersect: false // Désactiver l'intersection
+            mode: 'nearest',
+            intersect: false
         },
         plugins: {
             legend: {
-                display: false, // Désactiver la légende en haut
+                display: false // Masque la légende
             },
             title: {
                 display: true,
                 text: 'Maîtrise des Langages de Programmation',
-                color: '#ffffff', // Couleur du titre
+                color: '#ffffff',
                 font: {
-                    size: 16 // Augmente la taille de la police ici (par exemple, 18)
+                    size: 16
                 }
             },
             datalabels: {
                 color: '#ffffff',
-                anchor: 'center', // Positionner au centre de chaque tranche
-                align: 'center', // Centrer le texte
+                anchor: 'center',
+                align: 'center',
                 formatter: (value, context) => {
-                    const label = context.chart.data.labels[context.dataIndex]; // Récupérer le label correspondant
-                    return `${label}: ${value}`; // Affiche le label et la valeur
+                    const label = context.chart.data.labels[context.dataIndex];
+                    return `${label}: ${value}`;
                 },
-                backgroundColor: '#000000', // Couleur de fond
-                padding: 6 // Ajoute un peu d'espace autour du texte
+                backgroundColor: '#000000',
+                padding: 6
             }
         },
         elements: {
             arc: {
-                borderWidth: 0 // Supprime la bordure des segments
+                borderWidth: 0
             }
         },
-        animations: false // Désactive les animations pour le doughnut chart
+        animations: false
     },
-    plugins: [ChartDataLabels] // Assurez-vous d'utiliser le plugin ici
+    plugins: [ChartDataLabels]
 };
 
 
-// Créer le Doughnut Chart
+// Créer le Donut Chart et ajuster la hauteur au chargement de la page
 const ctxDoughnut = document.getElementById('doughnutChart').getContext('2d');
 doughnutChart = new Chart(ctxDoughnut, configDoughnut); // Stocke la référence au graphique
+adjustDoughnutHeight();
+
+
+
 
