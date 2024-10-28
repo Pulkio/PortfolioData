@@ -12,6 +12,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <style>
+        /* Inclure vos styles CSS ici ou le lien vers votre fichier CSS */
+    </style>
 </head>
 <body>
     <div id="menu-container">
@@ -25,28 +28,33 @@
     <h1>Mes compétences</h1>
 
     <!-- Texte d'introduction au-dessus du graphique -->
-    <!-- Texte d'introduction au-dessus du graphique -->
-    <div class="intro-text">
+    <div class="intro-text fade-in">
         <p>Bienvenue dans le bilan de mes compétences ! Je suis un développeur qui a trouvé sa voie dans l'analyse des données. 🕺📊</p>
-        <p>Pas de café ici, juste du sport ! Préparez-vous à découvrir mon parcours, où chaque ligne de code est un pas qui me rapproche de la ligne d'arrivée. 🏃‍♂️💨</p>
+        <p>Pas de café ici, juste du sport ! Préparez-vous à découvrir mon parcours, où chaque ligne de code est un pas qui me rapproche de mes objectifs. 🏃‍♂️💨</p>
     </div>
 
     <!-- Ajout de l'élément canvas pour le graphique -->
-    <div class="chart-container">
+    <div class="chart-container fade-in">
         <canvas id="myChart"></canvas>
     </div>
 
-    <!-- Texte d'explication du graphique en dessous -->
-    <div class="graph-explanation">
+    <!-- Texte explicatif du graphique en dessous -->
+    <div class="graph-explanation fade-in">
         <p>Ce graphique montre mon parcours. Développeur au départ, l'analyse de données est devenue ma passion. 😍</p>
         <p>Je vise à devenir Data Engineer, un rôle qui combine mes compétences analytiques et ma passion pour la technologie. 🖥️💡</p>
     </div>
 
-        <!-- Ajout de l'élément canvas pour le Doughnut -->
-    <div class="doughnut-container">
+    <!-- Ajout de l'élément canvas pour le Doughnut -->
+    <div class="doughnut-container fade-in">
         <canvas id="doughnutChart"></canvas>
     </div>
 
+    <!-- Texte d'explication spécifique au Doughnut Chart -->
+    <div class="doughnut-explanation fade-in">
+        <p>Ce diagramme en anneau illustre mon niveau de maîtrise des différents langages de programmation dans mon domaine de compétence. 🌐</p>
+        <p>Pour moi, connaître parfaitement la syntaxe d’un langage n’est pas l’objectif principal. Ce qui compte davantage, c'est ma capacité à m’adapter et à travailler avec divers langages en fonction des projets. 🚀</p>
+        <p>Le pourcentage le plus élevé représente le langage dans lequel j’ai la meilleure maîtrise, mais chaque valeur montre surtout ma polyvalence et ma capacité à évoluer dans des environnements variés. Je considère cette adaptabilité comme ma plus grande force, bien au-delà de la maîtrise d’un seul langage. 💡📊</p>
+    </div>
 
     <script src="../scripts/competences.js"></script> <!-- Lien vers le script JavaScript -->
 </body>

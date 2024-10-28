@@ -32,7 +32,7 @@ async function getAnswer(userQuestion) {
             const similarities = data;
             let bestMatchIndex = similarities.indexOf(Math.max(...similarities));
 
-            return similarities[bestMatchIndex] >= 0.5 ? qaData[bestMatchIndex].answer : "Désolé, je n'ai pas de réponse pour cette question.";
+            return similarities[bestMatchIndex] >= 0.5 ? qaData[bestMatchIndex].answer : "Comme le grand marathonien Eliud Kipchoge le dit si bien, No human is limited 😊. Mais n’étant ni humain ni omniscient, je dois avouer que je n’ai pas la réponse à cette question pour le moment 😅. N'hésitez pas à contacter directement Guillaume pour plus de précisions !";
         } else {
             throw new Error("Erreur lors de la récupération de la réponse : " + response.statusText);
         }

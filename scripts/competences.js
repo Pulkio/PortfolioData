@@ -118,7 +118,7 @@ const doughnutData = {
     labels: ['Java', 'R', 'C#', 'C++', 'Python', 'PHP', 'SQL', 'JavaScript'],
     datasets: [{
         label: 'Niveau de maîtrise',
-        data: [15, 25, 10, 7, 10, 4, 15, 6], // Valeurs de test
+        data: [15, 25, 10, 7, 12, 6, 18, 8], // Valeurs de test
         backgroundColor: [
             '#ff6384', '#36a2eb', '#ffce56', '#ff9f40',
             '#4bc0c0', '#9966ff', '#ffcd56', '#ff5733'
@@ -144,7 +144,7 @@ const configDoughnut = {
             },
             title: {
                 display: true,
-                text: 'Maîtrise des Langages de Programmation',
+                text: 'Répartition de Maîtrise Relative des Langages de Programmation',
                 color: '#ffffff',
                 font: {
                     size: 16
@@ -156,7 +156,7 @@ const configDoughnut = {
                 align: 'center',
                 formatter: (value, context) => {
                     const label = context.chart.data.labels[context.dataIndex];
-                    return `${label}: ${value}`;
+                    return `${label}: ${value}%`; // Affiche chaque niveau de maîtrise relatif
                 },
                 backgroundColor: '#000000',
                 padding: 6
@@ -173,11 +173,9 @@ const configDoughnut = {
 };
 
 
+
 // Créer le Donut Chart et ajuster la hauteur au chargement de la page
 const ctxDoughnut = document.getElementById('doughnutChart').getContext('2d');
 doughnutChart = new Chart(ctxDoughnut, configDoughnut); // Stocke la référence au graphique
 adjustDoughnutHeight();
-
-
-
 
