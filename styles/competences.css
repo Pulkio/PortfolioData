@@ -112,10 +112,11 @@ canvas {
     margin-bottom: 60px;
 }
 
-/* Nouvelle section pour les langues avec drapeaux */
+/* Styles pour les drapeaux et la section langues */
 .language-section {
     text-align: center; /* Centrer le texte et les drapeaux */
-    margin-top: 30px; /* Ajouter un espace au-dessus */
+    margin-top: 40px; /* Ajouter un espace au-dessus */
+    margin-bottom: 40px; /* Ajouter un espace en dessous */
 }
 
 .language-section ul {
@@ -124,11 +125,13 @@ canvas {
     display: flex; /* Utiliser flexbox pour l'alignement */
     justify-content: center; /* Centrer les éléments */
     flex-wrap: wrap; /* Permettre de passer à la ligne */
+    gap: 20px; /* Espace entre les éléments de la liste */
 }
 
 .language-section li {
-    margin: 10px; /* Ajouter un espacement entre les éléments */
+    margin: 30px 0; /* Espacement vertical supplémentaire pour chaque langue */
     transition: transform 0.3s; /* Transition pour l'effet hover */
+    margin-left: 50px;
 }
 
 .language-section li:hover {
@@ -136,11 +139,12 @@ canvas {
 }
 
 .language-flag {
-    width: 80px; /* Taille du drapeau */
+    width: 100px; /* Augmentation de la taille du drapeau */
     height: auto; /* Garder les proportions */
     vertical-align: middle; /* Aligner avec le texte */
-    margin-right: 5px; /* Espacement entre le drapeau et le texte */
+    margin-right: 10px; /* Espacement entre le drapeau et le texte */
 }
+
 
 /* Responsivité pour petits écrans */
 @media (max-width: 600px) {
@@ -159,9 +163,13 @@ canvas {
         height: auto;
     }
 
+    .language-flag {
+        width: 70px; /* Réduire la taille du drapeau pour mobile */
+    }
+
     .language-section ul {
-        flex-direction: column; /* Passer à une colonne sur mobile */
-        align-items: center; /* Centrer les éléments */
+        flex-direction: column; /* Disposition verticale sur mobile */
+        align-items: center;
     }
 }
 
@@ -187,4 +195,15 @@ canvas {
         max-width: 800px;
         height: auto;
     }
+}
+
+/* Espacement pour d'autres sections pour plus d'aération */
+.chart-container, .doughnut-container, .radar-container {
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.intro-text, .graph-explanation {
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
