@@ -1,4 +1,4 @@
-.formations-section {
+.projets-section {
     padding: 40px 20px;
     max-width: 1200px;
     margin: auto;
@@ -6,58 +6,46 @@
     text-align: center;
 }
 
-
-.formations-section h1 {
-    font-size: 2.5em;          
-    margin-bottom: 30px;      
-    padding-top: 70px;        
-    text-align: center;        
-    color: #ffffff;           
-    transition: color 0.3s, text-shadow 0.3s; 
-    text-shadow: 0px 0px 10px rgba(255, 204, 0, 0.8); /* Ombre de texte */
+.projets-section h1 {
+    font-size: 2.5em;
+    margin-bottom: 50px; /* Plus d'espace sous le titre principal */
+    padding-top: 70px;
+    color: #ffffff;
+    text-shadow: 0px 0px 10px rgba(255, 204, 0, 0.8);
+    transition: color 0.3s, text-shadow 0.3s;
 }
 
-/* Ajoutez cette règle pour le hover */
-.formations-section h1:hover {
-    color: #ffcc00; 
-    text-shadow: 0px 0px 20px rgba(255, 204, 0, 1); /* Ombre plus prononcée */
+.projets-section h1:hover {
+    color: #ffcc00;
+    text-shadow: 0px 0px 20px rgba(255, 204, 0, 1);
 }
 
-.formations-grid {
+.projets-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 30px; /* Augmentez cette valeur pour plus d'espace */
 }
 
-.formation-item {
-    flex: 1 0 300px; /* This will ensure that each formation-item takes up the same space and has a minimum width of 300px */
+.projets-item {
+    flex: 1 0 300px;
     background-color: #1e1e1e;
     border-radius: 10px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     transition: transform 0.3s ease;
-    padding: 20px;
+    padding: 35px; /* Augmentez cette valeur */
     align-items: center;
     border: 2px solid #ffcc00;
+    margin-bottom: 40px; /* Augmentez cette valeur pour plus d'espace entre les blocs */
 }
 
-
-.formation-item:hover {
-    transform: scale(1.03); /* Effet de zoom au survol */
+.projets-item:hover {
+    transform: scale(1.03);
 }
 
-/* Image avec taille fixe et sans tronquage */
-.formation-image {
-    width: 200px;
-    height: 100px;
-    object-fit: contain;
-    margin-bottom: 10px;
-}
-
-/* Informations de chaque formation */
-.formation-info {
+.projets-info {
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -65,35 +53,32 @@
     text-align: center;
 }
 
-/* Titre en blanc, jaune au survol */
-.formation-info h2 {
+.projets-info h2 {
     font-size: 1.5em;
-    margin-bottom: 10px;
-    color: #ffffff; /* Titre en blanc par défaut */
+    margin-bottom: 80px; /* Augmentez cette valeur pour plus d'espace sous les titres des projets */
+    color: #ffffff;
     transition: color 0.3s ease;
 }
 
-.formation-info h2:hover {
-    color: #ffcc00; /* Jaune au survol */
+.projets-info h2:hover {
+    color: #ffcc00;
 }
 
-/* Nouveau style pour le rôle */
-.formation-role {
+.projets-role {
     font-size: 1.1em;
     font-weight: bold;
-    color: #ffffff; /* Texte en blanc par défaut */
+    color: #ffffff;
     margin-bottom: 10px;
-    text-decoration: underline; /* Soulignement au lieu de l'encadré */
-    transition: color 0.3s ease; /* Transition pour le changement de couleur */
-    text-align: center; /* Centre le texte sans justification */
+    text-decoration: underline;
+    transition: color 0.3s ease;
+    text-align: center;
 }
 
-.formation-role:hover {
-    color: #ffcc00; /* Jaune au survol */
+.projets-role:hover {
+    color: #ffcc00;
 }
 
-/* Ligne avec date et lieu (sans soulignement) */
-.formation-meta {
+.projets-meta {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -104,57 +89,72 @@
     gap: 10px;
 }
 
-.formation-date,
-.formation-location {
+.projets-date,
+.projets-location {
     font-weight: bold;
-    color: #ffffff; /* Texte en blanc par défaut */
-    transition: color 0.3s ease; /* Transition pour le changement de couleur */
+    color: #ffffff;
+    transition: color 0.3s ease;
 }
 
-.formation-date:hover,
-.formation-location:hover {
-    color: #ffcc00; /* Jaune au survol */
+.projets-date:hover,
+.projets-location:hover {
+    color: #ffcc00;
 }
 
-/* Espacement pour la description */
-.formation-info p {
-    font-size: 1em;
-    line-height: 1.6;
+.projets-info p {
+    font-size: 1.1em; /* Texte plus grand */
+    line-height: 1.8; /* Espace entre les lignes */
     color: #e0e0e0;
-    margin-top: 15px;
-    transition: color 0.3s ease; /* Transition pour le changement de couleur */
+    margin-top: 20px; /* Espace entre les paragraphes */
+    transition: color 0.3s ease;
 }
 
-.formation-info p:hover {
-    color: #ffcc00; /* Jaune au survol */
+.projets-info p:hover {
+    color: #ffcc00;
 }
 
-/* Titres des années */
-.year-header {
-    margin: 40px 0 30px; /* Ajustez ici la marge inférieure pour ajouter de l'espace */
-    font-size: 24px;
+.section-header {
+    margin: 80px 0 40px; /* Augmentez la valeur de margin-top */
+    font-size: 2em;
     font-weight: bold;
-    padding-bottom: 30px; /* Espace entre le texte et la bordure */
-    border-bottom: 2px solid #ffcc00; /* Ligne de séparation jaune */
-    color: white; /* Couleur blanche pour les titres */
-    text-align: center; /* Centrer le texte des titres */
+    padding-bottom: 30px;
+    border-bottom: 2px solid #ffcc00;
+    color: white;
+    text-align: center;
 }
 
-/* Ajoutez cette règle pour le hover */
-.year-header:hover {
-    color: #ffcc00; /* Couleur au hover */
+.section-header:hover {
+    color: #ffcc00;
 }
 
-/* Styles responsives */
 @media (min-width: 600px) {
-    .formations-grid {
-        grid-template-columns: 1fr 1fr; /* Deux colonnes à partir de 600px */
+    .projets-grid {
+        grid-template-columns: 1fr 1fr;
     }
 }
 
 @media (min-width: 900px) {
-    .formations-grid {
-        grid-template-columns: 1fr 1fr 1fr; /* Trois colonnes à partir de 900px */
+    .projets-grid {
+        grid-template-columns: 1fr 1fr 1fr;
     }
 }
 
+/* Agrandir les vidéos dans leur conteneur responsive */
+.video-container,
+.video-responsive {
+    overflow: hidden;
+    padding-bottom: 56.25%; /* Rapport 16:9 */
+    position: relative;
+    height: 0;
+    max-width: 100%;
+}
+
+.video-responsive iframe {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    max-width: 800px; /* Largeur maximale pour agrandir les vidéos */
+    margin: auto;
+}
