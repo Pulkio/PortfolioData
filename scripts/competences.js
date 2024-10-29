@@ -171,7 +171,7 @@ const radarLabels = [
     'Résolution de problèmes',
     'Adaptabilité',
     'Pensée critique',
-    'Gestion du temps',
+    'Leadership',
     'Créativité',
     'Curiosité',
     'Autonomie',        // Nouvelle compétence ajoutée
@@ -182,7 +182,7 @@ const radarData = {
     labels: radarLabels,
     datasets: [{
         label: 'Niveau de Soft Skills',
-        data: [86, 75, 79, 85, 78, 77, 86, 72, 88, 92], // Remplace ces valeurs par tes propres évaluations
+        data: [86, 75, 79, 85, 78, 81, 86, 72, 88, 92], // Remplace ces valeurs par tes propres évaluations
         backgroundColor: 'rgba(54, 162, 235, 0.5)', // Couleur de fond
         borderColor: 'rgba(54, 162, 235, 1)', // Couleur de la bordure
         borderWidth: 1,

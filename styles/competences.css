@@ -112,6 +112,36 @@ canvas {
     margin-bottom: 60px;
 }
 
+/* Nouvelle section pour les langues avec drapeaux */
+.language-section {
+    text-align: center; /* Centrer le texte et les drapeaux */
+    margin-top: 30px; /* Ajouter un espace au-dessus */
+}
+
+.language-section ul {
+    list-style: none; /* Supprimer les puces */
+    padding: 0; /* Supprimer le padding */
+    display: flex; /* Utiliser flexbox pour l'alignement */
+    justify-content: center; /* Centrer les éléments */
+    flex-wrap: wrap; /* Permettre de passer à la ligne */
+}
+
+.language-section li {
+    margin: 10px; /* Ajouter un espacement entre les éléments */
+    transition: transform 0.3s; /* Transition pour l'effet hover */
+}
+
+.language-section li:hover {
+    transform: scale(1.1); /* Agrandir au survol */
+}
+
+.language-flag {
+    width: 40px; /* Taille du drapeau */
+    height: auto; /* Garder les proportions */
+    vertical-align: middle; /* Aligner avec le texte */
+    margin-right: 5px; /* Espacement entre le drapeau et le texte */
+}
+
 /* Responsivité pour petits écrans */
 @media (max-width: 600px) {
     canvas {
@@ -127,6 +157,11 @@ canvas {
     .doughnut-container {
         width: 80vw;
         height: auto;
+    }
+
+    .language-section ul {
+        flex-direction: column; /* Passer à une colonne sur mobile */
+        align-items: center; /* Centrer les éléments */
     }
 }
 
