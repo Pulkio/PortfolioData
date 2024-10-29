@@ -136,7 +136,7 @@ canvas {
 }
 
 .language-flag {
-    width: 40px; /* Taille du drapeau */
+    width: 80px; /* Taille du drapeau */
     height: auto; /* Garder les proportions */
     vertical-align: middle; /* Aligner avec le texte */
     margin-right: 5px; /* Espacement entre le drapeau et le texte */
