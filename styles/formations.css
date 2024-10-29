@@ -158,3 +158,12 @@
     }
 }
 
+a {
+    color: #ffcc00; /* Remplacez par la couleur souhaitée */
+    text-decoration: underline; 
+    transition: color 0.3s ease; /* Optionnel : ajoute une transition pour le changement de couleur */
+}
+
+a:hover {
+    font-weight: bold;
+}
