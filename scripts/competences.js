@@ -36,7 +36,7 @@ function createChart() {
                     max: 100, // Fin de l'axe Y à 100
                     title: {
                         display: true,
-                        text: 'Niveau de Maîtrise (%)',
+                        text: 'Temps de travail (%)',
                         color: '#ffffff', // Couleur du titre de l'axe Y en blanc
                         font: {
                             size: 16 // Augmente la taille de la police ici (par exemple, 18)
