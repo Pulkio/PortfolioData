@@ -34,12 +34,12 @@ window.addEventListener('touchmove', (event) => {
     isScrolling = true;
 
     const currentY = event.touches[0].clientY;
-    const deltaY = startY - currentY; // Inverse le sens du défilement
+    const deltaY = currentY - startY; // Inverse le sens du défilement
 
     if (deltaY > 0) {
-        currentSection = Math.min(currentSection + 1, scrollContainer.children.length - 1);
-    } else {
         currentSection = Math.max(currentSection - 1, 0);
+    } else {
+        currentSection = Math.min(currentSection + 1, scrollContainer.children.length - 1);
     }
 
     scrollToSection(currentSection);
