@@ -31,7 +31,7 @@
     opacity: 0; /* Commence invisible */
     transform: translateY(-100%); /* Positionner le menu hors de l'écran */
     transition: opacity 0.5s, transform 0.5s; /* Animation d'ouverture */
-    z-index: 999; /* Assurez-vous que le menu est au-dessus */
+    z-index: 1000; /* Assurez-vous que le menu est au-dessus */
     visibility: hidden; /* Cacher le menu au départ */
 }
 

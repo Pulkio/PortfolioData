@@ -28,16 +28,126 @@ body {
 }
 
 .content {
-    max-width: 800px;
+    max-width: 90%; /* Augmentation de la largeur maximale */
     padding: 20px;
 }
+
+.content p {
+    font-size: 1.2em; /* Taille de police */
+    line-height: 1.6em; /* Espace entre les lignes pour plus de confort de lecture */
+    margin: 0 auto; /* Centrage du texte */
+    text-align: justify;
+}
+
 
 .content h1, .content h2 {
     font-size: 3em;
     margin-bottom: 20px;
 }
 
-.content p {
-    font-size: 1.2em;
-    line-height: 1.5em;
+h1 {
+    font-size: 2.5em;          
+    margin-bottom: 30px;      
+    padding-top: 70px;        
+    text-align: center;        
+    color: #ffffff;           
+    transition: color 0.3s, text-shadow 0.3s; 
+    text-shadow: 0px 0px 10px rgba(255, 204, 0, 0.8); /* Ombre de texte */
+}
+
+/* Ajoutez cette règle pour le hover */
+h1:hover {
+    color: #ffcc00; 
+    text-shadow: 0px 0px 20px rgba(255, 204, 0, 1); /* Ombre plus prononcée */
+}
+
+
+/* Conteneur de l'image et du texte en overlay */
+.image-overlay-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Style de l'image */
+.image-overlay-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Style du texte superposé */
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7); /* Fond noir semi-transparent */
+    color: #ffffff; /* Couleur du texte */
+    padding: 20px 40px;
+    font-size: 2vw;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 8px;
+}
+
+
+/* Espacement pour la description */
+p {
+    font-size: 1em;
+    line-height: 1.6;
+    text-align: justify;
+    color: #e0e0e0;
+    margin-top: 15px;
+    transition: color 0.3s ease; /* Transition pour le changement de couleur */
+}
+
+p:hover {
+    color: #ffcc00; /* Jaune au survol */
+}
+
+/* Section "Jeux Vidéo" */
+#section-jeux-video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.gallery {
+    display: grid;
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+.gallery-item {
+    overflow: hidden;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Adaptation pour écrans larges : 3 images côte à côte */
+@media (min-width: 1024px) {
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Adaptation pour écrans moyens : 2 images côte à côte */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Adaptation pour petits écrans : 1 image par ligne */
+@media (max-width: 767px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
 }
