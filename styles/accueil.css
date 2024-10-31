@@ -112,7 +112,7 @@ h1:hover, h2:hover, h3:hover {
 /* Afficher uniquement sur les grands écrans */
 @media (min-width: 1024px) {
     .desktop-menu-hint {
-        position: absolute;
+        position: fixed;
         top: 20px; /* Ajustez pour positionner le texte près du menu */
         right: 60px; /* Utilisez right au lieu de left pour placer à droite */
         color: white;

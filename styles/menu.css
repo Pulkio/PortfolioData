@@ -4,9 +4,9 @@
 }
 
 .menu-icon {
-    position: absolute;
-    top: 20px; /* Espacement du haut */
-    right: 20px; /* Espacement à droite */
+    position: fixed; /* Rend l'icône sticky */
+    top: 20px; /* Distance par rapport au haut de la page */
+    right: 20px; /* Distance par rapport à la droite */
     font-size: 30px; /* Taille de l'icône */
     color: #fff; /* Couleur de l'icône */
     cursor: pointer; /* Curseur en main */
