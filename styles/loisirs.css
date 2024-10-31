@@ -151,3 +151,37 @@ p:hover {
         grid-template-columns: 1fr;
     }
 }
+
+.sound-button {
+    background-color: #121212; /* Vert moderne */
+    border: none;
+    border-radius: 50%; /* Bouton arrondi */
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.sound-button i {
+    color: #ffffff;
+    font-size: 1.5em;
+}
+
+.sound-button:hover {
+    background-color: #252323; /* Couleur plus sombre au survol */
+}
+
+.overlay-text {
+    display: flex; /* Utilisation de flexbox pour aligner les éléments horizontalement */
+    align-items: center; /* Aligner verticalement au centre */
+}
+
+.section-title {
+    margin-right: 10px; /* Espace entre le texte et le bouton */
+    color: white; /* Couleur du texte pour le contraste */
+    font-size: 1.5em; /* Ajustez la taille de la police si nécessaire */
+}
+
