@@ -1,7 +1,7 @@
 // Données manuelles pour chaque année
 const years = ['2019', '2020', '2021', '2022', '2023', '2024'];
-const data = [92, 88, 70, 68, 47, 31];  // Performance Développement Informatique
-const data2 = [8, 12, 30, 32, 53, 59]; // Performance Data Analyse
+const data = [92, 88, 70, 68, 47, 36];  // Performance Développement Informatique
+const data2 = [8, 12, 30, 32, 53, 64]; // Performance Data Analyse
 
 // Fonction pour créer le graphique
 function createChart() {
