@@ -1,14 +1,9 @@
-/* Styles globaux */
-body {
-    margin: 0; /* Enlève les marges par défaut */
-    padding: 0;
-    overflow-x: hidden; /* Cache les débordements horizontaux */
-}
+
 
 .projets-section {
     padding: 40px 20px;
     max-width: 1200px;
-    margin: auto;
+    margin: 0;
     color: #ffffff;
     text-align: center;
 }
