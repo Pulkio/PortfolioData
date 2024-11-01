@@ -8,7 +8,7 @@
 
 .projets-section h1 {
     font-size: 2.5em;
-    margin-bottom: 50px; /* Plus d'espace sous le titre principal */
+    margin-bottom: 50px;
     padding-top: 70px;
     color: #ffffff;
     text-shadow: 0px 0px 10px rgba(255, 204, 0, 0.8);
@@ -24,7 +24,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 30px; /* Augmentez cette valeur pour plus d'espace */
+    gap: 30px;
 }
 
 .projets-item {
@@ -35,10 +35,10 @@
     display: flex;
     flex-direction: column;
     transition: transform 0.3s ease;
-    padding: 35px; /* Augmentez cette valeur */
+    padding: 35px;
     align-items: center;
     border: 2px solid #ffcc00;
-    margin-bottom: 40px; /* Augmentez cette valeur pour plus d'espace entre les blocs */
+    margin-bottom: 40px;
 }
 
 .projets-item:hover {
@@ -53,9 +53,10 @@
     text-align: center;
 }
 
+/* Style h2 et effet hover */
 .projets-info h2 {
     font-size: 1.5em;
-    margin-bottom: 80px; /* Augmentez cette valeur pour plus d'espace sous les titres des projets */
+    margin-bottom: 80px;
     color: #ffffff;
     transition: color 0.3s ease;
 }
@@ -64,6 +65,7 @@
     color: #ffcc00;
 }
 
+/* Style et effet hover pour les rôles */
 .projets-role {
     font-size: 1.1em;
     font-weight: bold;
@@ -74,7 +76,7 @@
     text-align: center;
 }
 
-.projets-role:hover {
+.projets-item:hover .projets-role {
     color: #ffcc00;
 }
 
@@ -89,6 +91,7 @@
     gap: 10px;
 }
 
+/* Effet hover pour date et localisation */
 .projets-date,
 .projets-location {
     font-weight: bold;
@@ -96,16 +99,17 @@
     transition: color 0.3s ease;
 }
 
-.projets-date:hover,
-.projets-location:hover {
+.projets-item:hover .projets-date,
+.projets-item:hover .projets-location {
     color: #ffcc00;
 }
 
+/* Effet hover pour les paragraphes */
 .projets-info p {
-    font-size: 1.1em; /* Texte plus grand */
-    line-height: 1.8; /* Espace entre les lignes */
+    font-size: 1.1em;
+    line-height: 1.8;
     color: #e0e0e0;
-    margin-top: 20px; /* Espace entre les paragraphes */
+    margin-top: 20px;
     transition: color 0.3s ease;
 }
 
@@ -113,14 +117,27 @@
     color: #ffcc00;
 }
 
+/* Style et effet hover pour les liens */
+a {
+    color: #ffcc00;
+    text-decoration: underline; 
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    font-weight: bold;
+}
+
+/* Style de la section d'en-tête */
 .section-header {
-    margin: 80px 0 40px; /* Augmentez la valeur de margin-top */
+    margin: 80px 0 40px;
     font-size: 2em;
     font-weight: bold;
     padding-bottom: 30px;
     border-bottom: 2px solid #ffcc00;
     color: white;
     text-align: center;
+    transition: color 0.3s ease;
 }
 
 .section-header:hover {
@@ -139,11 +156,11 @@
     }
 }
 
-/* Agrandir les vidéos dans leur conteneur responsive */
+/* Agrandissement des vidéos dans leur conteneur responsive */
 .video-container,
 .video-responsive {
     overflow: hidden;
-    padding-bottom: 56.25%; /* Rapport 16:9 */
+    padding-bottom: 56.25%;
     position: relative;
     height: 0;
     max-width: 100%;
@@ -155,16 +172,6 @@
     width: 100%;
     height: 100%;
     position: absolute;
-    max-width: 800px; /* Largeur maximale pour agrandir les vidéos */
+    max-width: 800px;
     margin: auto;
-}
-
-a {
-    color: #ffcc00; /* Remplacez par la couleur souhaitée */
-    text-decoration: underline; 
-    transition: color 0.3s ease; /* Optionnel : ajoute une transition pour le changement de couleur */
-}
-
-a:hover {
-    font-weight: bold;
 }
