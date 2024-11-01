@@ -65,14 +65,14 @@ body {
 }
 
 .content p {
-    font-size: 1.5vw; /* Taille de police ajustée */
+    font-size: 1.5rem; /* Taille de police ajustée pour un meilleur rendu sur mobile */
     line-height: 1.6em; /* Espace entre les lignes pour plus de confort de lecture */
     margin: 0 auto; /* Centrage du texte */
     text-align: justify;
 }
 
 .content h1, .content h2 {
-    font-size: 3vw; /* Ajustement dynamique pour les titres */
+    font-size: 2.5rem; /* Taille de police ajustée pour un meilleur rendu sur mobile */
     margin-bottom: 20px;
 }
 
@@ -83,6 +83,21 @@ p {
     color: #e0e0e0;
     margin-top: 15px;
     transition: color 0.3s ease; /* Transition pour le changement de couleur */
+}
+
+/* Media Queries pour des tailles de texte spécifiques aux petits écrans */
+@media (max-width: 600px) {
+    .content p {
+        font-size: 1.2rem; /* Plus grand pour les petits écrans */
+    }
+
+    .content h1 {
+        font-size: 2rem; /* Ajustement du h1 pour les petits écrans */
+    }
+
+    .content h2 {
+        font-size: 1.5rem; /* Ajustement du h2 pour les petits écrans */
+    }
 }
 
 p:hover {
