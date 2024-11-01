@@ -3,6 +3,7 @@ body {
     padding: 0;
     overflow: hidden;
     height: 100vh;
+    font-size: 2vw; /* Taille de base pour le texte, ajustable selon le viewport */
 }
 
 #scroll-container {
@@ -27,39 +28,6 @@ body {
     object-fit: cover;
 }
 
-.content {
-    max-width: 90%; /* Augmentation de la largeur maximale */
-    padding: 20px;
-}
-
-.content p {
-    font-size: 1.2em; /* Taille de police */
-    line-height: 1.6em; /* Espace entre les lignes pour plus de confort de lecture */
-    margin: 0 auto; /* Centrage du texte */
-    text-align: justify;
-}
-
-
-.content h1, .content h2 {
-    font-size: 3em;
-    margin-bottom: 20px;
-}
-
-h1 {
-    font-size: 2.5em;          
-    margin-bottom: 30px;      
-    padding-top: 70px;        
-    text-align: center;        
-    color: #ffffff;           
-    transition: color 0.3s, text-shadow 0.3s; 
-    text-shadow: 0px 0px 10px rgba(255, 204, 0, 0.8); /* Ombre de texte */
-}
-
-/* Ajoutez cette règle pour le hover */
-h1:hover {
-    color: #ffcc00; 
-    text-shadow: 0px 0px 20px rgba(255, 204, 0, 1); /* Ombre plus prononcée */
-}
 
 
 /* Conteneur de l'image et du texte en overlay */
@@ -85,16 +53,31 @@ h1:hover {
     background-color: rgba(0, 0, 0, 0.7); /* Fond noir semi-transparent */
     color: #ffffff; /* Couleur du texte */
     padding: 20px 40px;
-    font-size: 2vw;
     font-weight: bold;
     text-align: center;
     border-radius: 8px;
 }
 
 
+.content {
+    max-width: 90%; /* Augmentation de la largeur maximale */
+    padding: 20px;
+}
+
+.content p {
+    font-size: 1.5vw; /* Taille de police ajustée */
+    line-height: 1.6em; /* Espace entre les lignes pour plus de confort de lecture */
+    margin: 0 auto; /* Centrage du texte */
+    text-align: justify;
+}
+
+.content h1, .content h2 {
+    font-size: 3vw; /* Ajustement dynamique pour les titres */
+    margin-bottom: 20px;
+}
+
 /* Espacement pour la description */
 p {
-    font-size: 1em;
     line-height: 1.6;
     text-align: justify;
     color: #e0e0e0;
@@ -105,6 +88,7 @@ p {
 p:hover {
     color: #ffcc00; /* Jaune au survol */
 }
+
 
 /* Section "Jeux Vidéo" */
 #section-jeux-video {
@@ -182,7 +166,7 @@ p:hover {
 .section-title {
     margin-right: 10px; /* Espace entre le texte et le bouton */
     color: white; /* Couleur du texte pour le contraste */
-    font-size: 1.5em; /* Ajustez la taille de la police si nécessaire */
+    font-size: 2vw; /* Ajustement dynamique */
 }
 
 #snake-game-canvas {
@@ -202,15 +186,8 @@ p:hover {
     height: 100vh; /* Remplit la section entière de la hauteur */
 }
 
-.encouragement-text {
-    font-size: 1.2em; /* Taille de la police */
-    margin: 20px 0; /* Marges pour espacer le texte du bouton */
-    color: #e0e0e0; /* Couleur du texte */
-    line-height: 1.6; /* Espace entre les lignes */
-}
-
 #score {
-    font-size: 1.5em; /* Taille de la police pour le score */
+    font-size: 2vw; /* Ajustement dynamique pour le score */
     color: #ffffff; /* Couleur du texte du score */
     margin: 20px 0; /* Marges pour espacer du reste */
 }
@@ -221,7 +198,7 @@ p:hover {
     border: none; /* Pas de bordure */
     border-radius: 5px; /* Coins arrondis */
     padding: 15px 30px; /* Espacement interne */
-    font-size: 1.5em; /* Taille de la police du bouton */
+    font-size: 2vw; /* Ajustement dynamique pour le bouton */
     cursor: pointer; /* Change le curseur au survol */
     transition: background-color 0.3s, transform 0.2s; /* Transitions pour les effets */
 }
@@ -229,4 +206,11 @@ p:hover {
 .styled-button:hover {
     background-color: #218838; /* Couleur au survol */
     transform: scale(1.05); /* Légère augmentation de la taille au survol */
+}
+
+/* Cacher la section Snake sur les petits écrans */
+@media (max-width: 1024px) {
+    #snake-game-section {
+        display: none; /* Ne pas afficher la section sur les petits écrans */
+    }
 }

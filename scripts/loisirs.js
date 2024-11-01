@@ -56,10 +56,16 @@ document.addEventListener('DOMContentLoaded', function () {
     const defaultVolume = 0.1;
     let currentAudio = null;
     let currentButton = null;
+    let soundFilesQueue = []; // Tableau pour stocker la queue des sons
+    let currentSoundIndex = 0; // Indice de la musique actuelle
 
     // Fonction pour lancer la musique
     function playMusic(button, soundFiles) {
-        const soundFile = soundFiles[Math.floor(Math.random() * soundFiles.length)];
+        // Si c'est un nouveau bouton, on initialise la queue
+        if (currentButton !== button) {
+            soundFilesQueue = soundFiles; // Remplir la queue avec les sons du bouton
+            currentSoundIndex = 0; // Réinitialiser l'index
+        }
 
         // Arrête la musique actuelle si elle existe
         if (currentAudio) {
@@ -67,29 +73,43 @@ document.addEventListener('DOMContentLoaded', function () {
             currentButton.innerHTML = '<i class="fas fa-volume-up"></i>';
         }
 
-        // Initialise et joue la nouvelle musique
-        currentAudio = new Audio(soundFile);
-        currentAudio.volume = defaultVolume;
-        currentAudio.play().catch(error => console.error("Erreur lors de la lecture du son :", error));
-        
-        // Met à jour le bouton actuel et l'icône
-        button.innerHTML = '<i class="fas fa-stop"></i>';
-        currentButton = button;
+        // Joue la musique suivante dans la queue
+        playNextSound(button);
+    }
 
-        // Enregistre dans localStorage
-        localStorage.setItem('currentSound', soundFile);
-        localStorage.setItem('isPlaying', 'true');
-        localStorage.setItem('buttonIndex', Array.from(soundButtons).indexOf(button));
+    function playNextSound(button) {
+        if (currentSoundIndex < soundFilesQueue.length) {
+            const soundFile = soundFilesQueue[currentSoundIndex];
 
-        // Réinitialise quand la musique est terminée
-        currentAudio.addEventListener('ended', () => {
+            // Initialise et joue la nouvelle musique
+            currentAudio = new Audio(soundFile);
+            currentAudio.volume = defaultVolume;
+            currentAudio.play().catch(error => console.error("Erreur lors de la lecture du son :", error));
+
+            // Met à jour le bouton actuel et l'icône
+            button.innerHTML = '<i class="fas fa-stop"></i>';
+            currentButton = button;
+
+            // Enregistre dans localStorage
+            localStorage.setItem('currentSound', soundFile);
+            localStorage.setItem('isPlaying', 'true');
+            localStorage.setItem('buttonIndex', Array.from(soundButtons).indexOf(button));
+
+            // Écoute l'événement 'ended' pour passer à la musique suivante
+            currentAudio.addEventListener('ended', () => {
+                currentSoundIndex++; // Passer à la musique suivante
+                playNextSound(button); // Joue la musique suivante
+            });
+        } else {
+            // Réinitialiser quand la queue est terminée
             button.innerHTML = '<i class="fas fa-volume-up"></i>';
             localStorage.removeItem('currentSound');
             localStorage.removeItem('isPlaying');
             localStorage.removeItem('buttonIndex');
             currentAudio = null;
             currentButton = null;
-        });
+            soundFilesQueue = []; // Réinitialiser la queue
+        }
     }
 
     // Fonction pour arrêter la musique
@@ -105,6 +125,8 @@ document.addEventListener('DOMContentLoaded', function () {
             localStorage.removeItem('buttonIndex');
             currentAudio = null;
             currentButton = null;
+            soundFilesQueue = []; // Réinitialiser la queue
+            currentSoundIndex = 0; // Réinitialiser l'index
         }
     }
 
@@ -141,6 +163,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
 
 
 
@@ -239,12 +262,9 @@ function checkCollision() {
 // Boucle de jeu principale
 function gameLoop() {
     if (checkCollision()) {
-        alert('Game Over!');
-        clearInterval(game);
-        canvas.style.display = 'none'; // Cacher le canevas
-        startButton.style.display = 'block'; // Afficher le bouton de démarrage
-        scoreDisplay.style.display = 'none'; // Masquer le score
-        return;
+        // Créer une boîte de dialogue de Game Over
+        showGameOver();
+        return; // Quitter la boucle de jeu
     }
     context.clearRect(0, 0, canvas.width, canvas.height); // Effacer le canevas
     drawFood(); // Dessiner la nourriture
@@ -252,28 +272,64 @@ function gameLoop() {
     moveSnake(); // Déplacer le serpent
 }
 
+// Fonction pour afficher le Game Over
+function showGameOver() {
+    clearInterval(game); // Arrêter le jeu
+    canvas.style.display = 'none'; // Cacher le canevas
+    startButton.style.display = 'block'; // Afficher le bouton de démarrage
+
+    // Réafficher le texte
+    const snakeGameSection = document.getElementById('snake-game-section');
+    snakeGameSection.querySelector('h2').style.display = 'block';
+    snakeGameSection.querySelector('.encouragement-text').style.display = 'block';
+    document.getElementById('score').style.display = 'none'; // Cacher le score
+
+    // Réinitialiser le score
+    score = 0;
+    updateScore(); // Met à jour l'affichage du score à 0
+
+    // Afficher une boîte de dialogue stylisée
+    const gameOverMessage = document.createElement('div');
+    gameOverMessage.className = 'game-over-message';
+    gameOverMessage.innerHTML = `<h3>Game Over</h3><p>Votre score final : ${score}</p>`;
+    snakeGameSection.appendChild(gameOverMessage);
+}
+
 // Fonction pour démarrer le jeu lorsque le bouton est cliqué
 startButton.addEventListener('click', () => {
-    canvas.style.display = 'block'; // Afficher le canevas
+    // Cacher le texte et le bouton
+    document.getElementById('snake-game-section').querySelector('h2').style.display = 'none';
+    document.getElementById('snake-game-section').querySelector('.content').style.display = 'none';
+    document.getElementById('score').style.display = 'block'; // Afficher le score
     startButton.style.display = 'none'; // Cacher le bouton
-    scoreDisplay.style.display = 'block'; // Afficher le score
+    canvas.style.display = 'block'; // Afficher le canevas
     resizeCanvas(); // Redimensionner le canevas
     direction = 'RIGHT'; // Réinitialiser la direction
     nextDirection = 'RIGHT'; // Réinitialiser la prochaine direction
     snake = [{ x: 9 * box, y: 9 * box }]; // Réinitialiser le serpent
     food = generateFood(); // Générer la nourriture
     speed = 100; // Réinitialiser la vitesse
+    score = 0; // Réinitialiser le score à 0
+    updateScore(); // Mettre à jour l'affichage du score
     clearInterval(game);
     game = setInterval(gameLoop, speed); // Démarrer la boucle de jeu
 });
 
-// Écouter les flèches de direction pour déplacer le serpent
+// Écouter les flèches de direction et ZQSD pour déplacer le serpent
 document.addEventListener('keydown', (event) => {
+    // Contrôle avec les flèches de direction
     if (event.key === 'ArrowLeft' && direction !== 'RIGHT') nextDirection = 'LEFT';
     if (event.key === 'ArrowUp' && direction !== 'DOWN') nextDirection = 'UP';
     if (event.key === 'ArrowRight' && direction !== 'LEFT') nextDirection = 'RIGHT';
     if (event.key === 'ArrowDown' && direction !== 'UP') nextDirection = 'DOWN';
+
+    // Contrôle avec ZQSD
+    if (event.key === 'q' && direction !== 'RIGHT') nextDirection = 'LEFT'; // Q
+    if (event.key === 'z' && direction !== 'DOWN') nextDirection = 'UP'; // Z
+    if (event.key === 'd' && direction !== 'LEFT') nextDirection = 'RIGHT'; // D
+    if (event.key === 's' && direction !== 'UP') nextDirection = 'DOWN'; // S
 });
+
 
 // Fonction pour redimensionner le canevas
 function resizeCanvas() {
@@ -290,10 +346,7 @@ function resizeCanvas() {
     if (canvas.height >= window.innerHeight) {
         canvas.height = window.innerHeight - 1; // S'assurer que c'est strictement inférieur
     }
-
 }
 
 // Appeler resizeCanvas au démarrage
 resizeCanvas();
-
-
