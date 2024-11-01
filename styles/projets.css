@@ -8,6 +8,13 @@
     text-align: center;
 }
 
+/* Ajout de margin auto pour les écrans plus larges */
+@media (min-width: 600px) {
+    .projets-section {
+        margin: auto; /* Valeur pour les écrans larges */
+    }
+}
+
 .projets-section h1 {
     font-size: 2.5em;
     margin-bottom: 50px;
