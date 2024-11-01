@@ -185,3 +185,48 @@ p:hover {
     font-size: 1.5em; /* Ajustez la taille de la police si nécessaire */
 }
 
+#snake-game-canvas {
+    border: 2px solid yellow; /* Ajout d'une bordure pour délimiter la zone de jeu */
+    image-rendering: pixelated; /* Rend le dessin plus net */
+    display: none; /* Le canevas est caché au départ */
+    width: 80vw; /* Ajustez la largeur à 80% de la largeur de la vue */
+    height: 80vh; /* Gardez le canevas carré */
+}
+
+#snake-game-section {
+    display: flex; /* Utilise flexbox pour la disposition */
+    flex-direction: column; /* Aligne les éléments en colonne */
+    justify-content: center; /* Centre verticalement */
+    align-items: center; /* Centre horizontalement */
+    text-align: center; /* Centre le texte */
+    height: 100vh; /* Remplit la section entière de la hauteur */
+}
+
+.encouragement-text {
+    font-size: 1.2em; /* Taille de la police */
+    margin: 20px 0; /* Marges pour espacer le texte du bouton */
+    color: #e0e0e0; /* Couleur du texte */
+    line-height: 1.6; /* Espace entre les lignes */
+}
+
+#score {
+    font-size: 1.5em; /* Taille de la police pour le score */
+    color: #ffffff; /* Couleur du texte du score */
+    margin: 20px 0; /* Marges pour espacer du reste */
+}
+
+.styled-button {
+    background-color: #28a745; /* Couleur de fond du bouton */
+    color: white; /* Couleur du texte */
+    border: none; /* Pas de bordure */
+    border-radius: 5px; /* Coins arrondis */
+    padding: 15px 30px; /* Espacement interne */
+    font-size: 1.5em; /* Taille de la police du bouton */
+    cursor: pointer; /* Change le curseur au survol */
+    transition: background-color 0.3s, transform 0.2s; /* Transitions pour les effets */
+}
+
+.styled-button:hover {
+    background-color: #218838; /* Couleur au survol */
+    transform: scale(1.05); /* Légère augmentation de la taille au survol */
+}
