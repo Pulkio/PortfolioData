@@ -43,9 +43,10 @@
     margin-bottom: 40px;
 }
 
+/*
 .projets-item:hover {
     transform: scale(1.03);
-}
+}*/
 
 /* Effet hover individuel pour h2 et p */
 h2.projets-info {
