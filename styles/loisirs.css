@@ -76,6 +76,10 @@ body {
     margin-bottom: 20px;
 }
 
+.content h2:hover {
+    color: #ffcc00; /* Jaune au survol */
+}
+
 /* Espacement pour la description */
 p {
     line-height: 1.6;
@@ -104,6 +108,7 @@ p {
 p:hover {
     color: #ffcc00; /* Jaune au survol */
 }
+
 
 
 /* Section "Jeux Vidéo" */

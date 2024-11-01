@@ -53,116 +53,82 @@ window.addEventListener('touchmove', (event) => {
 
 document.addEventListener('DOMContentLoaded', function () {
     const soundButtons = document.querySelectorAll('.sound-button');
-    const defaultVolume = 0.1;
-    let currentAudio = null;
-    let currentButton = null;
-    let soundFilesQueue = []; // Tableau pour stocker la queue des sons
-    let currentSoundIndex = 0; // Indice de la musique actuelle
+    let currentAudio = null; // Variable pour garder une référence au son en cours
+    const defaultVolume = 0.2; // Définir le volume par défaut à 10%
+    let currentButton = null; // Variable pour garder une référence au bouton en cours
+    let soundFiles = []; // Pour stocker les fichiers son du bouton actuel
+    let currentSoundIndex = -1; // Index du son actuel
 
-    // Fonction pour lancer la musique
-    function playMusic(button, soundFiles) {
-        // Si c'est un nouveau bouton, on initialise la queue
-        if (currentButton !== button) {
-            soundFilesQueue = soundFiles; // Remplir la queue avec les sons du bouton
-            currentSoundIndex = 0; // Réinitialiser l'index
-        }
-
-        // Arrête la musique actuelle si elle existe
-        if (currentAudio) {
-            currentAudio.pause();
-            currentButton.innerHTML = '<i class="fas fa-volume-up"></i>';
-        }
-
-        // Joue la musique suivante dans la queue
-        playNextSound(button);
-    }
-
-    function playNextSound(button) {
-        if (currentSoundIndex < soundFilesQueue.length) {
-            const soundFile = soundFilesQueue[currentSoundIndex];
-
-            // Initialise et joue la nouvelle musique
-            currentAudio = new Audio(soundFile);
-            currentAudio.volume = defaultVolume;
-            currentAudio.play().catch(error => console.error("Erreur lors de la lecture du son :", error));
-
-            // Met à jour le bouton actuel et l'icône
-            button.innerHTML = '<i class="fas fa-stop"></i>';
-            currentButton = button;
-
-            // Enregistre dans localStorage
-            localStorage.setItem('currentSound', soundFile);
-            localStorage.setItem('isPlaying', 'true');
-            localStorage.setItem('buttonIndex', Array.from(soundButtons).indexOf(button));
-
-            // Écoute l'événement 'ended' pour passer à la musique suivante
-            currentAudio.addEventListener('ended', () => {
-                currentSoundIndex++; // Passer à la musique suivante
-                playNextSound(button); // Joue la musique suivante
-            });
-        } else {
-            // Réinitialiser quand la queue est terminée
-            button.innerHTML = '<i class="fas fa-volume-up"></i>';
-            localStorage.removeItem('currentSound');
-            localStorage.removeItem('isPlaying');
-            localStorage.removeItem('buttonIndex');
-            currentAudio = null;
-            currentButton = null;
-            soundFilesQueue = []; // Réinitialiser la queue
-        }
-    }
-
-    // Fonction pour arrêter la musique
-    function stopMusic() {
-        if (currentAudio) {
-            currentAudio.pause();
-            currentAudio.currentTime = 0;
-            currentButton.innerHTML = '<i class="fas fa-volume-up"></i>';
-
-            // Supprime la musique de localStorage
-            localStorage.removeItem('currentSound');
-            localStorage.removeItem('isPlaying');
-            localStorage.removeItem('buttonIndex');
-            currentAudio = null;
-            currentButton = null;
-            soundFilesQueue = []; // Réinitialiser la queue
-            currentSoundIndex = 0; // Réinitialiser l'index
-        }
-    }
-
-    // Reprise de la musique au chargement si elle est enregistrée dans localStorage
-    const savedSound = localStorage.getItem('currentSound');
-    const isPlaying = localStorage.getItem('isPlaying');
-    const buttonIndex = localStorage.getItem('buttonIndex');
-
-    // Reprendre la lecture si une piste est déjà active
-    if (savedSound && isPlaying === 'true' && buttonIndex !== null) {
-        currentAudio = new Audio(savedSound);
-        currentAudio.volume = defaultVolume;
-        currentAudio.play().catch(error => console.error("Erreur lors de la lecture du son :", error));
-        
-        currentButton = soundButtons[buttonIndex];
-        currentButton.innerHTML = '<i class="fas fa-stop"></i>';
-    }
-
-    // Ajouter un gestionnaire de clic pour chaque bouton
-    soundButtons.forEach((button, index) => {
+    soundButtons.forEach(button => {
         button.addEventListener('click', function () {
-            const soundFiles = JSON.parse(this.getAttribute('data-sounds'));
+            // Récupère les fichiers son depuis l'attribut data-sounds
+            soundFiles = JSON.parse(this.getAttribute('data-sounds'));
 
-            // Vérifie si c'est le même bouton pour démarrer ou arrêter
-            if (currentButton === this) {
-                if (currentAudio && !currentAudio.paused) {
-                    stopMusic(); // Si en cours, arrête la lecture
+            // Si un son est déjà en cours
+            if (currentAudio) {
+                // Met la musique en pause si elle est en cours
+                if (currentButton === this) {
+                    if (!currentAudio.paused) {
+                        currentAudio.pause(); // Arrête le son
+                        currentButton.innerHTML = '<i class="fas fa-volume-up"></i>'; // Change l'icône à volume-up
+                        currentButton = null; // Réinitialise le bouton courant
+                        currentAudio = null; // Réinitialise la référence audio
+                        return; // Sort de la fonction
+                    }
                 } else {
-                    playMusic(this, soundFiles); // Sinon, relance la musique
+                    // Si un autre bouton est cliqué, arrête le son actuel
+                    currentAudio.pause(); // Arrête l'audio actuel
+                    currentAudio.currentTime = 0; // Réinitialise le temps de lecture
+                    currentButton.innerHTML = '<i class="fas fa-volume-up"></i>'; // Réinitialise l'icône de l'ancien bouton
                 }
-            } else {
-                playMusic(this, soundFiles); // Si c'est un autre bouton, change de musique
             }
+
+            // Si c'est le premier clic, choisir un son aléatoire
+            if (currentSoundIndex === -1) {
+                currentSoundIndex = Math.floor(Math.random() * soundFiles.length);
+            } else {
+                // Sinon, passer à l'index suivant
+                currentSoundIndex = (currentSoundIndex + 1) % soundFiles.length;
+            }
+
+            // Crée un nouvel objet Audio et joue le son
+            currentAudio = new Audio(soundFiles[currentSoundIndex]);
+            currentAudio.volume = defaultVolume; // Réduit le volume
+            currentAudio.play().catch(error => {
+                console.error("Erreur lors de la lecture du son :", error);
+            });
+
+            // Change l'icône du bouton à "stop"
+            this.innerHTML = '<i class="fas fa-stop"></i>'; // Change l'icône à stop
+
+            // Réinitialiser les icônes des autres boutons
+            soundButtons.forEach(btn => {
+                if (btn !== this) {
+                    btn.innerHTML = '<i class="fas fa-volume-up"></i>'; // Réinitialise l'icône
+                }
+            });
+
+            // Met à jour le bouton actuel
+            currentButton = this;
+
+            // Ajouter un événement pour jouer le son suivant à la fin
+            currentAudio.addEventListener('ended', () => {
+                // Joue le son suivant
+                currentSoundIndex = (currentSoundIndex + 1) % soundFiles.length; // Passe à l'index suivant
+                currentAudio = new Audio(soundFiles[currentSoundIndex]); // Crée un nouvel objet Audio
+                currentAudio.volume = defaultVolume; // Réduit le volume
+                currentAudio.play().catch(error => {
+                    console.error("Erreur lors de la lecture du son :", error);
+                });
+            });
         });
     });
 });
+
+
+
+
+
 
 
 

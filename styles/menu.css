@@ -54,6 +54,11 @@
     text-align: center; /* Centrer le texte */
 }
 
+/* Styles pour le contenu du menu */
+.menu-content h2 {
+    font-size: 2.5rem; /* Taille de police ajustée pour un meilleur rendu sur mobile */
+}
+
 .menu-content ul {
     list-style: none; /* Supprimer les puces de la liste */
     padding: 0; /* Enlever le padding */
@@ -70,6 +75,10 @@
     font-size: 28px; /* Taille de la police augmentée */
     position: relative; /* Nécessaire pour l'effet de soulignement */
     transition: color 0.3s ease, background-color 0.3s ease; /* Transition pour les changements de couleur */
+}
+
+.menu-content h2:hover {
+    color: #ffcc00; /* Couleur du texte au survol */
 }
 
 
