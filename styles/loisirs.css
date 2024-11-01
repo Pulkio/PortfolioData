@@ -141,7 +141,7 @@ p:hover {
 /* Adaptation pour écrans moyens : 2 images côte à côte */
 @media (min-width: 768px) and (max-width: 1023px) {
     .gallery {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
@@ -228,5 +228,21 @@ p:hover {
 @media (max-width: 1024px) {
     #snake-game-section {
         display: none; /* Ne pas afficher la section sur les petits écrans */
+    }
+}
+
+
+/* Media Query pour les petits écrans */
+@media (max-width: 768px) {
+    .athle-section .gallery-item img {
+        content: url('../images/mobile_athle1.jpg'); /* Image à utiliser sur mobile */
+    }
+
+    .athle-section .gallery-item:nth-child(2) img {
+        content: url('../images/mobile_athle3.jpg'); /* Deuxième image sur mobile */
+    }
+
+    .athle-section .gallery-item:nth-child(3) img {
+        content: url('../images/mobile_athle2.jpg'); /* Troisième image sur mobile */
     }
 }
