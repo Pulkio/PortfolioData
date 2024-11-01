@@ -1,3 +1,4 @@
+/* Styles globaux */
 .projets-section {
     padding: 40px 20px;
     max-width: 1200px;
@@ -20,6 +21,7 @@
     text-shadow: 0px 0px 20px rgba(255, 204, 0, 1);
 }
 
+/* Styles de la grille et des éléments */
 .projets-grid {
     display: flex;
     flex-wrap: wrap;
@@ -45,90 +47,42 @@
     transform: scale(1.03);
 }
 
-.projets-info {
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-/* Style h2 et effet hover */
-.projets-info h2 {
+/* Effet hover individuel pour h2 et p */
+h2.projets-info {
     font-size: 1.5em;
-    margin-bottom: 80px;
     color: #ffffff;
     transition: color 0.3s ease;
+    margin-bottom: 20px; /* Ajout d'un espacement entre les h2 et les p */
 }
 
-.projets-info h2:hover {
+h2.projets-info:hover {
     color: #ffcc00;
 }
 
-/* Style et effet hover pour les rôles */
-.projets-role {
+p.projets-info {
     font-size: 1.1em;
-    font-weight: bold;
     color: #ffffff;
-    margin-bottom: 10px;
-    text-decoration: underline;
     transition: color 0.3s ease;
-    text-align: center;
+    margin-bottom: 20px; /* Ajout d'un espacement entre les h2 et les p */
 }
 
-.projets-item:hover .projets-role {
+p.projets-info:hover {
     color: #ffcc00;
 }
 
-.projets-meta {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1em;
-    color: #ffffff;
-    margin: 10px 0 15px;
-    font-weight: 600;
-    gap: 10px;
-}
-
-/* Effet hover pour date et localisation */
-.projets-date,
-.projets-location {
-    font-weight: bold;
-    color: #ffffff;
-    transition: color 0.3s ease;
-}
-
-.projets-item:hover .projets-date,
-.projets-item:hover .projets-location {
-    color: #ffcc00;
-}
-
-/* Effet hover pour les paragraphes */
-.projets-info p {
-    font-size: 1.1em;
-    line-height: 1.8;
-    color: #e0e0e0;
-    margin-top: 20px;
-    transition: color 0.3s ease;
-}
-
-.projets-info p:hover {
-    color: #ffcc00;
-}
-
-/* Style et effet hover pour les liens */
+/* Style pour les liens */
 a {
     color: #ffcc00;
-    text-decoration: underline; 
-    transition: color 0.3s ease;
+    text-decoration: underline;
+    transition: color 0.3s ease, font-weight 0.3s ease;
 }
 
 a:hover {
+    color: #ffffff;
     font-weight: bold;
 }
 
-/* Style de la section d'en-tête */
+/* Style pour les en-têtes de section */
 .section-header {
     margin: 80px 0 40px;
     font-size: 2em;
@@ -144,6 +98,7 @@ a:hover {
     color: #ffcc00;
 }
 
+/* Mise en page responsive */
 @media (min-width: 600px) {
     .projets-grid {
         grid-template-columns: 1fr 1fr;
@@ -156,7 +111,7 @@ a:hover {
     }
 }
 
-/* Agrandissement des vidéos dans leur conteneur responsive */
+/* Style vidéo pour conteneur responsive */
 .video-container,
 .video-responsive {
     overflow: hidden;
